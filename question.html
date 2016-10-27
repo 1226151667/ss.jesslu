@@ -6,6 +6,13 @@
 <link href="images/logo.ico" rel="shortcut icon" type="image/x-icon" />
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <style>
+@font-face { 
+  font-family: 'liaocao'; 
+  src: url('./fonts/liaocao.ttf');
+   font-weight: normal;
+  font-style: normal; 
+}
+body{font-family:"微软雅黑","黑体","宋体";font-size:14px;}
 *{margin:0px;padding:0px;}
 ul,li{list-style:none;}
 a,a:hover{text-decoration:none;}
@@ -27,31 +34,35 @@ a,a:hover{text-decoration:none;}
 .navbar-brand{padding:0px;}
 /*/phoneNav*/
 #sosuo{
-	padding:15px;
+	padding:10px 0px 10px 5px;
 	border-bottom:2px solid #e0e0e0;
-	height:75px;
+	height:55px;
 	background:#f0f0f0;
 	width:100%;
 }
-.popover-userInfo{font-size:12px;}
-.popover-userInfo .popover-title{font-size:12px;}
-.popover-userInfo .userName{font-size:16px}
-.popover-userInfo .userSign{margin-top:10px;}
 #content{
 	margin-top:10px;
 }
-.content-left .list{margin:10px 0px;}
-.content-left .list .list-popover{max-width:none;position:relative;z-index:1;}
-.content-left .list .list-popover .list-cnt{color:#3c3c3c;}
-.content-left .list .list-popover .list-title{font-size:18px;}
-.content-left .list .list-user{height:auto;padding:0px;cursor:pointer;}
-.content-left .list .list-operation{cursor:pointer;}
+.content-left,.content-right{padding:0px;}
+.content-left .jiazai{background:#adadad;border:2px solid #eee;border-radius:5px;height:40px;line-height:40px;color:white;}
+.content-left .list{border-top:1px solid #f0f0f0;height:auto;padding:20px 5px;border-radius:6px;}
+.content-left .list .list-title{font-size:16px;}
+.content-right .column{border-top:1px solid #f0f0f0;padding:10px;}
+.content-right .column2 ul li,.content-right .column3 ul li{margin-top:10px;}
+.content-right .column .cnt{display:block;float:right;height:20;width:auto;background:#3c3c3c;border-radius:5px;color:white;line-height:20px;padding:0px 5px;}
 #foot{background:black;height:50px;color:#3c3c3c;line-height:50px;margin-top:10px;border-top:2px solid #adadad;}
-#backTop{position:fixed;right:30%;bottom:70px;z-index:3;}
-#backTop div{background:#272727;font-size:30px;height:50px;width:50px;border-radius:3px;color:#9d9d9d;text-align:center;padding-top:8px;}
-#backTop div:hover{background:#0d91d6;color:white;}
+/*#backTop{position:fixed;right:37%;bottom:10px;z-index:3;}*/
+#backTop{background:#272727;font-size:30px;height:50px;width:50px;border-radius:25px;color:#9d9d9d;text-align:center;padding-top:8px;position:fixed;right:37%;bottom:10px;z-index:3;}
+#backTop:hover{background:#0d91d6;color:white;}
+#ask-question{background:rgba(13,145,214,0.8);font-size:30px;height:60px;width:60px;border-radius:30px;color:#eee;text-align:center;padding-top:8px;position:fixed;right:42%;bottom:10px;z-index:3;padding-top:13px}
 #content .breadcrumb{font-size:18px;}
-
+/*用户详请*/
+#userInfo{height:140px;width:280px;border:2px solid #e0e0e0;position:absolute;z-index:3;border-radius:5px;background:url(images/userInfo-bg.png) repeat;color:white;padding:5px 10px;display:none;}
+#userInfo .top{height:55px;}
+#userInfo .top img{border:2px solid #adadad}
+#userInfo .content{height:55px;width:100%;}
+#userInfo .foot{height:20px;width:100%;}
+#userInfo .bottom{border-width:8px 7px 0px 7px;border-color:#e0e0e0 transparent transparent transparent;border-style:solid;position:relative;top:10px;left:-5px;}
 
 @media (max-width:767px){
 	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
@@ -142,20 +153,29 @@ a,a:hover{text-decoration:none;}
 <!-- /phoneNav -->
 <!-- sosuo -->
 <div id="sosuo">
-	<div class="container">
-		<div class="col-sm-6 col-sm-offset-1 sosuo-input">
-			<div class="col-sm-12">   	
-			   	<div class="input-group">
-			        <input type="text" class="form-control input-lg" placeholder="没有搜不到，只有想不到">
-			        <span class="input-group-btn">
-			            <button class="btn btn-primary btn-lg" type="button">
-			                <span class="glyphicon glyphicon-search"></span> 搜 索
-			            </button>
-			        </span>
-			    </div>
+	<!-- <div class="container"> -->
+		<div class="col-sm-4 col-sm-offset-2 sosuo-input">
+			<div class="col-sm-12">
+				<div class="col-sm-10">   	
+				   	<div class="input-group">
+				        <input type="text" class="form-control" placeholder="没有搜不到，只有想不到">
+				        <span class="input-group-btn">
+				            <button class="btn btn-primary" type="button">
+				                <span class="glyphicon glyphicon-search"></span> 全站搜索
+				            </button>
+				        </span>
+				    </div>
+				</div>
+				<div class="col-sm-2 hidden-xs">
+					<span class="input-group-btn">
+				            <button class="btn btn-primary" type="button">
+				                <span class="glyphicon glyphicon-pencil"></span>&nbsp;我要提问
+				            </button>
+				        </span>
+				</div>
 			</div>
 		</div>
-	</div>
+	<!-- </div> -->
 </div>
 <!-- /sosuo -->
 <!-- content -->
@@ -164,146 +184,204 @@ a,a:hover{text-decoration:none;}
 		<div class="col-sm-12">
 			<ol class="breadcrumb">
 				<li><a href="#">首页</a></li>
-				<li class="active">问答社区</li>
+				<li><a href="#">问答社区</a></li>
+				<li class="active">PHP</li>
 			</ol>
 		</div>
 		<div class="col-sm-12">	
 			<div class="content-left col-sm-8">
-				<div class="col-sm-12 list">
-					<div class="col-xs-1 list-user">
-						<img src="images/userPic.jpg" class="img-responsive img-circle" height="80px" width="80px">
+				<div class="col-sm-12 lists">
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
 					</div>
-					<div class="col-xs-11 list-content">
-						<div class="popover list-popover fade right in col-sm-12" role="tooltip" id="popover33265" style="display: block;">
-							<div class="arrow" style="top: 25%;"></div>
-							<h3 class="popover-title list-title"><a href="">问题：为什么php那么难学</a></h3>
-							<h3 class="popover-title list-cnt">
-								提问人:jesslu &nbsp; 类别:php &nbsp; 阅读量:123 &nbsp; 回答量:23
-							</h3>
-							<div class="popover-content">
-								<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是<code>java</code>把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。php是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。
-							</div>
-							<div class="popover-title list-operation">
-								<a><span class="glyphicon glyphicon-thumbs-up"></span>赞同(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-thumbs-down"><span>反对(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-heart"><span>打赏(12.00)</a>
-							</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室?要求性能高，高并发，数据大压力解决处理方法</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href="">这是最后一条问题</a><br>
+							</p>
+							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 list" style="display:none;">
+						<div class="col-sm-1 hidden-xs">
+							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						</div>
+						<div class="col-sm-11">
+							<p class="list-title">
+								<a href=""></a><br>
+							</p>
+							<p class="list-pro">
+								<span class="tm"></span>&nbsp;&nbsp;
+								类别:<span class="type"></span>&nbsp;&nbsp;
+								阅读量:<span class="clickCnt"></span>&nbsp;&nbsp;
+								回答量:<span class="replyCnt"></span>
+							</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 list">
-					<div class="col-xs-1 list-user">
-						<img src="images/userPic.jpg" class="img-responsive img-circle" height="80px" width="80px">
-					</div>
-					<div class="col-xs-11 list-content">
-						<div class="popover list-popover fade right in col-sm-12" role="tooltip" id="popover33265" style="display: block;">
-							<div class="arrow" style="top: 25%;"></div>
-							<h3 class="popover-title list-title"><a href="">问题：为什么php那么难学</a></h3>
-							<h3 class="popover-title list-cnt">
-								提问人:jesslu &nbsp; 类别:php &nbsp; 阅读量:123 &nbsp; 回答量:23
-							</h3>
-							<div class="popover-content">
-								<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是<code>java</code>把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。php是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。
-							</div>
-							<div class="popover-title list-operation">
-								<a><span class="glyphicon glyphicon-thumbs-up"></span>赞同(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-thumbs-down"><span>反对(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-heart"><span>打赏(12.00)</a>
-							</div>
-						</div>
-					</div>
+				<div class="col-sm-12 text-center jiazai">
+					<img src="images/jiazai.gif" height="22px"> &nbsp;&nbsp;&nbsp;正在加载
 				</div>
-				<div class="col-sm-12 list">
-					<div class="col-xs-1 list-user">
-						<img src="images/userPic.jpg" class="img-responsive img-circle" height="80px" width="80px">
-					</div>
-					<div class="col-xs-11 list-content">
-						<div class="popover list-popover fade right in col-sm-12" role="tooltip" id="popover33265" style="display: block;">
-							<div class="arrow" style="top: 25%;"></div>
-							<h3 class="popover-title list-title"><a href="">问题：为什么php那么难学</a></h3>
-							<h3 class="popover-title list-cnt">
-								提问人:jesslu &nbsp; 类别:php &nbsp; 阅读量:123 &nbsp; 回答量:23
-							</h3>
-							<div class="popover-content">
-								<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是<code>java</code>把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。php是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。
-							</div>
-							<div class="popover-title list-operation">
-								<a><span class="glyphicon glyphicon-thumbs-up"></span>赞同(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-thumbs-down"><span>反对(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-heart"><span>打赏(12.00)</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-12 list">
-					<div class="col-xs-1 list-user">
-						<img src="images/userPic.jpg" class="img-responsive img-circle" height="80px" width="80px">
-					</div>
-					<div class="col-xs-11 list-content">
-						<div class="popover list-popover fade right in col-sm-12" role="tooltip" id="popover33265" style="display: block;">
-							<div class="arrow" style="top: 25%;"></div>
-							<h3 class="popover-title list-title"><a href="">问题：为什么php那么难学</a></h3>
-							<h3 class="popover-title list-cnt">
-								提问人:jesslu &nbsp; 类别:php &nbsp; 阅读量:123 &nbsp; 回答量:23
-							</h3>
-							<div class="popover-content">
-								<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是<code>java</code>把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。php是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。
-							</div>
-							<div class="popover-title list-operation">
-								<a><span class="glyphicon glyphicon-thumbs-up"></span>赞同(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-thumbs-down"><span>反对(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-heart"><span>打赏(12.00)</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-12 list">
-					<div class="col-xs-1 list-user">
-						<img src="images/userPic.jpg" class="img-responsive img-circle" height="80px" width="80px">
-					</div>
-					<div class="col-xs-11 list-content">
-						<div class="popover list-popover fade right in col-sm-12" role="tooltip" id="popover33265" style="display: block;">
-							<div class="arrow" style="top: 25%;"></div>
-							<h3 class="popover-title list-title"><a href="">问题：为什么php那么难学</a></h3>
-							<h3 class="popover-title list-cnt">
-								提问人:jesslu &nbsp; 类别:php &nbsp; 阅读量:123 &nbsp; 回答量:23
-							</h3>
-							<div class="popover-content">
-								<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是<code>java</code>把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。php是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。
-							</div>
-							<div class="popover-title list-operation">
-								<a><span class="glyphicon glyphicon-thumbs-up"></span>赞同(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-thumbs-down"><span>反对(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-heart"><span>打赏(12.00)</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-12 list">
-					<div class="col-xs-1 list-user">
-						<img src="images/userPic.jpg" class="img-responsive img-circle" height="80px" width="80px">
-					</div>
-					<div class="col-xs-11 list-content">
-						<div class="popover list-popover fade right in col-sm-12" role="tooltip" id="popover33265" style="display: block;">
-							<div class="arrow" style="top: 25%;"></div>
-							<h3 class="popover-title list-title"><a href="">问题：为什么php那么难学</a></h3>
-							<h3 class="popover-title list-cnt">
-								提问人:jesslu &nbsp; 类别:php &nbsp; 阅读量:123 &nbsp; 回答量:23
-							</h3>
-							<div class="popover-content">
-								<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是<code>java</code>把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。<code>php</code>是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。php是21的最好学的编程语言，为什么讲不好学，你搞错了吧，你说的应该是java把。
-							</div>
-							<div class="popover-title list-operation">
-								<a><span class="glyphicon glyphicon-thumbs-up"></span>赞同(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-thumbs-down"><span>反对(12)</a>&nbsp;&nbsp;
-								<a><span class="glyphicon glyphicon-heart"><span>打赏(12.00)</a>
-							</div>
-						</div>
-					</div>
-				</div>		
 			</div>
 			<div class="content-right col-sm-4 hidden-sm">
-				
+				<div class="col-sm-12 column column1">
+					<h4>问答统计</h4>
+					<h4><small>在此特别感谢所有用户的贡献</small></h4>
+					<p>我们有多少问题<span class="cnt">3345</span></p>
+					<p>我们有多少回答<span class="cnt">8866</span></p>
+					<p>我们已解决了多少问题<span class="cnt">2436</span></p>
+				</div>
+				<div class="col-sm-12 column column2">
+					<h4>用户PK榜</h4>
+					<h4><small>若有疑问请联系我们的客服人员</small></h4>
+					<ul>
+						<li>
+							<span>回答数PK</span>
+							<ul>
+								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+								<li><img class="userPic" src="images/userPic1.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+							</ul>
+						</li>
+						<li>
+							<span>问题数PK</span>
+							<ul>
+								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+								<li><img class="userPic" src="images/userPic1.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+							</ul>
+						</li>
+						<li>
+							<span>采用数PK</span>
+							<ul>
+								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+								<li><img class="userPic" src="images/userPic1.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-12 column column3">
+					<h4>问题PK榜</h4>
+					<h4><small>若有疑问请联系我们的客服人员</small></h4>
+					<ul>
+						<li>
+							<span>回答数PK</span>
+							<ul>
+								<li><a href="">我的脑袋是百度</a><span class="cnt">458</span></li>
+								<li><a href="">我的脑袋是百度</a><span class="cnt">32</span></li>
+								<li><a href="">我的脑袋是百度</a><span class="cnt">3</span></li>
+							</ul>
+						</li>
+						<li>
+							<span>阅读数PK</span>
+							<ul>
+								<li><a href="">我的脑袋是百度我的脑袋是百度我的脑袋是百度我的脑袋是百度我的脑袋是百度</a><span class="cnt">323</span></li>
+								<li><a href="">我的脑袋是百度</a><span class="cnt">3</span></li>
+								<li><a href="">我的脑袋是百度</a><span class="cnt">3</span></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -315,29 +393,32 @@ a,a:hover{text-decoration:none;}
 </div>
 <!-- /foot -->
 <!-- userInfo -->
-<div class="popover fade top in popover-userInfo" role="tooltip" id="popover462755">
-	<div class="arrow" style="left: 10%;"></div>
-	<div class="popover-content">
-		<div>
-			<img src="images/userPic.jpg" class="img-circle" height="50px" width="50px">&nbsp;
-			<span class="userName"></span>
-		</div>
-		<div class="userSign">
-			<!-- 我不是最好的，但我要是最努力的,只有努力才能有美好的明天 -->
-		</div>
+<div id="userInfo">
+	<div class="top">
+		<img src="images/userPic1.jpg" width="50px" class="img-circle img-rounded">&nbsp;
+		<span class="userName">jsosuo</span>
 	</div>
-	<h3 class="popover-title">
-		<span class="wenCnt"></span>&nbsp;&nbsp;
-		<span class="daCnt"></span>&nbsp;&nbsp;
-		<span class="shangCnt"></span>
-	</h3>
+	<div class="content userSign">
+		我可以不聪明，但是我一定要努力，努力可以解决难题
+	</div>
+	<div class="foot userCnt">
+		问题数 <span class="wenCnt">12</span>&nbsp;&nbsp;
+		回答数 <span class="daCnt">12</span>&nbsp;&nbsp;
+		收到打赏 <span class="shangCnt">12.00</span>
+	</div>
+	<i class="bottom"></i>
 </div>	
 <!-- /userInfo -->
 <!-- backTop -->
 <div id="backTop">
-	<div class="up"><span class="glyphicon glyphicon-arrow-up"></span></div>
+	<span class="glyphicon glyphicon-arrow-up"></span>
 </div>
 <!-- /backTop -->
+<!-- ask question -->
+<div class="visible-xs-block" id="ask-question">
+	<span class="glyphicon glyphicon-pencil"></span>
+</div>
+<!-- /ask question -->
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -351,20 +432,20 @@ $("#pcNav ul li").hover(function(){
 	$(this).find("a").css("color","#9d9d9d");
 });
 // 用户详情
-$(".list-user img").hover(function(){
-	var userInfo = $(".popover-userInfo");
+$(".userPic").hover(function(){
+	var userInfo = $("#userInfo");
 	var top = $(this).offset().top;
 	var left = $(this).offset().left;
 	var uH = userInfo.height();
-	top = top-uH;
+	top = top-uH-20;
 	userInfo.find("img").attr("src","images/userPic.jpg");
 	userInfo.find(".userName").text("jesslu");
 	userInfo.find(".userSign").text("我不是最好的，但我要是最努力的,只有努力才能有美好的明天");
-	userInfo.find(".wenCnt").text("问题(123)");
-	userInfo.find(".daCnt").text("回答(13)");
-	userInfo.find(".shangCnt").text("打赏(23.00)");
+	userInfo.find(".wenCnt").text("123");
+	userInfo.find(".daCnt").text("13");
+	userInfo.find(".shangCnt").text("23.00");
 	userInfo.css({"top":top,"left":left}).show();
-},function(){$(".popover-userInfo").hide();});
+},function(){$("#userInfo").hide();});
 // 搜索
 $(window).scroll(function(event){
 	var ss = $("#sosuo");
@@ -377,8 +458,34 @@ $(window).scroll(function(event){
 	ss.css({"position":"relative","z-index":"1"});
 });
 //回到顶部
-$("#backTop .up").click(function(){
+$("#backTop").click(function(){
 	$("html,body").animate({"scrollTop":"0"},300);
+});
+//动态加载
+$(window).scroll(function(event){
+	if($(window).scrollTop()>1000){
+		$("#backTop").show();
+	}else{
+		$("#backTop").hide();
+	}
+	var lastList = $(".list");
+	var jzTop = $("#foot").offset().top;
+	// var jzH = $(".jiazai").height()
+	var wH = document.body.clientHeight;
+	var lastListScrTop = jzTop-wH;
+	if($(window).scrollTop()>lastListScrTop){
+		// clone(true)保留所有属性和事件
+		for (var i=0;i<5;i++){
+			var userArr = ["images/userPic1.jpg","考考靠","2016-10-26 10:23","php",132,34];
+			lastList.eq(-1).before(lastList.eq(-1).clone(true)).show();
+			lastList.eq(-1).find("img").attr("src",userArr[0]);
+			lastList.eq(-1).find(".list-title a").text(userArr[1]);
+			lastList.eq(-1).find(".tm").text(userArr[2]);
+			lastList.eq(-1).find(".type").text(userArr[3]);			
+			lastList.eq(-1).find(".clickCnt").text(userArr[4]);			
+			lastList.eq(-1).find(".replyCnt").text(userArr[5]);			
+		}
+	}
 });
 </script>
 </html>
