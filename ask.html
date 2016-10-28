@@ -43,16 +43,22 @@ a,a:hover{text-decoration:none;}
 #content{
 	margin-top:10px;
 }
-.content-left,.content-right{padding:0px;}
-.content-left .jiazai{background:#adadad;border:2px solid #eee;border-radius:5px;height:40px;line-height:40px;color:white;}
-.content-left .list{border-top:1px solid #f0f0f0;height:auto;padding:20px 5px;border-radius:6px;}
-.content-left .list .list-title{font-size:16px;}
-.content-right .column{border-top:1px solid #f0f0f0;padding:10px;}
-.content-right .column2 ul li,.content-right .column3 ul li{margin-top:10px;}
-.content-right .column .cnt{display:block;float:right;height:20;width:auto;background:#3c3c3c;border-radius:5px;color:white;line-height:20px;padding:0px 5px;}
+#content .content{padding:0px;}
+#content .content .list .master p{font-size:14px;color:#4f4f4f;margin-top:10px;}
+#content .content .list .master .num{height:30px;width:60%;background:rgba(13,145,214,0.6);border-radius:15px;margin:0 auto;line-height:30px;color:white;}
+#content .content .jiazai{background:#adadad;border:2px solid #eee;border-radius:5px;height:40px;line-height:40px;color:white;}
+#content .content .list{border-top:1px solid #f0f0f0;height:auto;padding:20px 5px;border-radius:6px;}
+#content .content .list .list-title,#content .content .list .list-description{font-size:16px;}
+#content .content .list .list-pro{color:#7b7b7b;}
+#content .content .list .glyphicon{font-size:20px;color: rgb(13,145,190);cursor:pointer;}
+/*#content .content .list .reply .list .userName{background:rgba(13,145,214,0.8);padding:5px;border-radius:5px;color:white;}*/
+#content .content .list .replys .list .huifu{padding:10px;}
+
+#content .content .jt{border-width:30px 80px 0px 0px;border-color:#adadad transparent transparent transparent;border-style:solid;position:relative;top:30px;left:-70px;}
+
 #foot{background:black;height:50px;color:#3c3c3c;line-height:50px;margin-top:10px;border-top:2px solid #adadad;}
 /*#backTop{position:fixed;right:37%;bottom:10px;z-index:3;}*/
-#backTop{background:#272727;font-size:30px;height:50px;width:50px;border-radius:25px;color:#9d9d9d;text-align:center;padding-top:8px;position:fixed;right:37%;bottom:10px;z-index:3;}
+#backTop{background:#272727;font-size:30px;height:50px;width:50px;border-radius:25px;color:#9d9d9d;text-align:center;padding-top:8px;position:fixed;right:15%;bottom:150px;z-index:3;display:none;}
 #backTop:hover{background:#0d91d6;color:white;}
 #ask-question{background:rgba(13,145,214,0.8);font-size:30px;height:60px;width:60px;border-radius:30px;color:#eee;text-align:center;padding-top:8px;position:fixed;right:42%;bottom:10px;z-index:3;padding-top:13px}
 #content .breadcrumb{font-size:18px;}
@@ -185,125 +191,145 @@ a,a:hover{text-decoration:none;}
 			<ol class="breadcrumb">
 				<li><a href="#">首页</a></li>
 				<li><a href="#">问答社区</a></li>
-				<li class="active">PHP</li>
+				<li><a href="#">PHP</a></li>
+				<li class="active">用php+ajax+mysql怎么做一个简易的聊天室</li>
 			</ol>
 		</div>
 		<div class="col-sm-12">	
-			<div class="content-left col-sm-8">
+			<div class="content col-sm-12">
 				<div class="col-sm-12 lists">
 					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						<div class="col-sm-2 text-center master">
+							<img class="userPic img-rounded" src="images/userPic1.jpg" width="100px">
+							<p class="masterName">我是答题王</p>
+							<p class="num">楼主</p>
 						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室?要求性能高，高并发，数据大压力解决处理方法</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						<div class="col-sm-10">
+							<div class="col-sm-12">
+								<i class="jt">我来提问</i>	
+								<p class="list-description">
+									用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室<img class="img-thumbnail" src="dm1.png">
+								</p>
+								<p class="text-right list-pro">
+									阅读量:<span class="clickCnt">300</span>&nbsp;&nbsp;
+									回答量:<span class="clickCnt">32</span>&nbsp;&nbsp;
+									类别:<span class="clickCnt">PHP</span>&nbsp;&nbsp;
+									<span class="tm">2016-10-27 12:09:00</span>
+								</p>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						<div class="col-sm-2 text-center master">
+							<img class="userPic img-rounded" src="images/userPic1.jpg" width="100px">
+							<p class="masterName">我是答题王</p>
+							<p class="num">1楼</p>
 						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
-						</div>
-					</div>
-					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
-						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">用php+ajax+mysql怎么做一个简易的聊天室</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						<div class="col-sm-10">
+							<div class="col-sm-12">
+								<i class="jt">听我说</i>	
+								<p class="list-description">
+									用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室
+								</p>
+								<p class="text-right list-pro">
+									<span class="tm">2016-10-27 12:09:00</span>&nbsp;&nbsp;
+								</p>
+								<p class="text-left list-oper">
+									<a title="赞同" class="glyphicon glyphicon-thumbs-up yes">343</a>&nbsp;&nbsp;
+									<a title="反对" class="glyphicon glyphicon-thumbs-down no">12</a>&nbsp;&nbsp;
+									<a title="打赏" class="glyphicon glyphicon-heart shang">36.00</a>&nbsp;&nbsp;
+									<a title="回复" class="glyphicon glyphicon-comment reply">12</a>
+								</p>
+							</div>
+							<div class="col-sm-12 replys">
+								<div class="col-sm-12 list">
+									<p>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+										<span class="huifu">回复</span>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+									</p>
+									<p class="list-description">
+										大神说的挺对的，真的不错，我就是这样用的，非常棒，感谢这个平台帮组了我，我真的很高兴非常棒，感谢这个平台帮组了我，我真的很高兴
+									</p>
+									<p class="text-right list-pro">
+										<a title="回复" class="glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+										<span class="tm">2016-10-27 12:09:00</span>
+									</p>
+								</div>
+								<div class="col-sm-12 list">
+									<p>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+										<span class="huifu">回复</span>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+									</p>
+									<p class="list-description">
+										大神说的挺对的，真的不错，我就是这样用的，非常棒，感谢这个平台帮组了我，我真的很高兴非常棒，感谢这个平台帮组了我，我真的很高兴
+									</p>
+									<p class="text-right list-pro">
+										<a title="回复" class="glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+										<span class="tm">2016-10-27 12:09:00</span>
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 list">
-						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+						<div class="col-sm-2 text-center master">
+							<img class="userPic img-rounded" src="images/userPic1.jpg" width="100px">
+							<p class="masterName">我是答题王</p>
+							<p class="num">1楼</p>
 						</div>
-						<div class="col-sm-11">
-							<p class="list-title">
-								<a href="">这是最后一条问题</a><br>
-							</p>
-							<span class="list-pro">今天10:23&nbsp;&nbsp;类别:php&nbsp;&nbsp;阅读量:123&nbsp;&nbsp;回答量:56&nbsp;&nbsp;</span>
+						<div class="col-sm-10">
+							<div class="col-sm-12">
+								<i class="jt">听我说</i>	
+								<p class="list-description">
+									用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室用php+ajax+mysql怎么做一个简易的聊天室
+								</p>
+								<p class="text-right list-pro">
+									<span class="tm">2016-10-27 12:09:00</span>&nbsp;&nbsp;
+								</p>
+								<p class="text-left list-oper">
+									<a title="赞同" class="glyphicon glyphicon-thumbs-up yes">343</a>&nbsp;&nbsp;
+									<a title="反对" class="glyphicon glyphicon-thumbs-down no">12</a>&nbsp;&nbsp;
+									<a title="打赏" class="glyphicon glyphicon-heart shang">36.00</a>&nbsp;&nbsp;
+									<a title="回复" class="glyphicon glyphicon-comment reply">12</a>
+								</p>
+							</div>
+							<div class="col-sm-12 replys">
+								<div class="col-sm-12 list">
+									<p>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+										<span class="huifu">回复</span>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+									</p>
+									<p class="list-description">
+										大神说的挺对的，真的不错，我就是这样用的，非常棒，感谢这个平台帮组了我，我真的很高兴非常棒，感谢这个平台帮组了我，我真的很高兴
+									</p>
+									<p class="text-right list-pro">
+										<a title="回复" class="glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+										<span class="tm">2016-10-27 12:09:00</span>
+									</p>
+								</div>
+								<div class="col-sm-12 list">
+									<p>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+										<span class="huifu">回复</span>
+										<img src="images/userPic1.jpg" class="img-thumbnail userPic" width="50px">
+									</p>
+									<p class="list-description">
+										大神说的挺对的，真的不错，我就是这样用的，非常棒，感谢这个平台帮组了我，我真的很高兴非常棒，感谢这个平台帮组了我，我真的很高兴
+									</p>
+									<p class="text-right list-pro">
+										<a title="回复" class="glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+										<span class="tm">2016-10-27 12:09:00</span>
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 list" style="display:none;">
 						<div class="col-sm-1 hidden-xs">
-							<img class="userPic img-rounded" src="images/userPic.jpg" width="50px">
+							<img class="userPic img-rounded" src="images/userPic1.jpg" width="50px">
 						</div>
 						<div class="col-sm-11">
 							<p class="list-title">
@@ -319,74 +345,17 @@ a,a:hover{text-decoration:none;}
 					</div>
 				</div>
 				<div class="col-sm-12 text-center jiazai">
-					<img src="images/jiazai.gif" height="22px"> &nbsp;&nbsp;&nbsp;正在加载
-				</div>
-			</div>
-			<div class="content-right col-sm-4 hidden-sm">
-				<div class="col-sm-12 column column1">
-					<h4>问答统计</h4>
-					<h4><small>在此特别感谢所有用户的贡献</small></h4>
-					<p>我们有多少问题<span class="cnt">3345</span></p>
-					<p>我们有多少回答<span class="cnt">8866</span></p>
-					<p>我们已解决了多少问题<span class="cnt">2436</span></p>
-				</div>
-				<div class="col-sm-12 column column2">
-					<h4>用户PK榜</h4>
-					<h4><small>若有疑问请联系我们的客服人员</small></h4>
-					<ul>
-						<li>
-							<span>回答数PK</span>
-							<ul>
-								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-								<li><img class="userPic" src="images/userPic1.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-							</ul>
-						</li>
-						<li>
-							<span>问题数PK</span>
-							<ul>
-								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-								<li><img class="userPic" src="images/userPic1.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-							</ul>
-						</li>
-						<li>
-							<span>采用数PK</span>
-							<ul>
-								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-								<li><img class="userPic" src="images/userPic1.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-								<li><img class="userPic" src="images/userPic.jpg" class="img-rounded"  width="30px"> 我的脑袋是百度<span class="cnt">3</span></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="col-sm-12 column column3">
-					<h4>问题PK榜</h4>
-					<h4><small>若有疑问请联系我们的客服人员</small></h4>
-					<ul>
-						<li>
-							<span>回答数PK</span>
-							<ul>
-								<li><a href="">我的脑袋是百度</a><span class="cnt">458</span></li>
-								<li><a href="">我的脑袋是百度</a><span class="cnt">32</span></li>
-								<li><a href="">我的脑袋是百度</a><span class="cnt">3</span></li>
-							</ul>
-						</li>
-						<li>
-							<span>阅读数PK</span>
-							<ul>
-								<li><a href="">我的脑袋是百度我的脑袋是百度我的脑袋是百度我的脑袋是百度我的脑袋是百度</a><span class="cnt">323</span></li>
-								<li><a href="">我的脑袋是百度</a><span class="cnt">3</span></li>
-								<li><a href="">我的脑袋是百度</a><span class="cnt">3</span></li>
-							</ul>
-						</li>
-					</ul>
+				 &nbsp;&nbsp;&nbsp;加载更多
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- /content -->
+<!-- share -->
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- /share -->
 <!-- foot -->
 <div id="foot">
 	<p class="text-center">Copyright @ 2016 捷搜索 皖ICP备16017589号-1</p>
@@ -419,10 +388,6 @@ a,a:hover{text-decoration:none;}
 	<span class="glyphicon glyphicon-pencil"></span>
 </div>
 <!-- /ask question -->
-<!-- share -->
-
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-<!-- /share -->
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -442,7 +407,7 @@ $(".userPic").hover(function(){
 	var left = $(this).offset().left;
 	var uH = userInfo.height();
 	top = top-uH-20;
-	userInfo.find("img").attr("src","images/userPic.jpg");
+	userInfo.find("img").attr("src","images/userPic1.jpg");
 	userInfo.find(".userName").text("jesslu");
 	userInfo.find(".userSign").text("我不是最好的，但我要是最努力的,只有努力才能有美好的明天");
 	userInfo.find(".wenCnt").text("123");
@@ -471,24 +436,6 @@ $(window).scroll(function(event){
 		$("#backTop").show();
 	}else{
 		$("#backTop").hide();
-	}
-	var lastList = $(".list");
-	var jzTop = $("#foot").offset().top;
-	// var jzH = $(".jiazai").height()
-	var wH = document.body.clientHeight;
-	var lastListScrTop = jzTop-wH;
-	if($(window).scrollTop()>lastListScrTop){
-		// clone(true)保留所有属性和事件
-		for (var i=0;i<5;i++){
-			var userArr = ["images/userPic1.jpg","考考靠","2016-10-26 10:23","php",132,34];
-			lastList.eq(-1).before(lastList.eq(-1).clone(true)).show();
-			lastList.eq(-1).find("img").attr("src",userArr[0]);
-			lastList.eq(-1).find(".list-title a").text(userArr[1]);
-			lastList.eq(-1).find(".tm").text(userArr[2]);
-			lastList.eq(-1).find(".type").text(userArr[3]);			
-			lastList.eq(-1).find(".clickCnt").text(userArr[4]);			
-			lastList.eq(-1).find(".replyCnt").text(userArr[5]);			
-		}
 	}
 });
 </script>
