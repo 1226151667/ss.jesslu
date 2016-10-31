@@ -6,47 +6,18 @@
 <link href="images/logo.ico" rel="shortcut icon" type="image/x-icon" />
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <style>
-body{font-family:"微软雅黑","黑体","宋体";font-size:14px;}
-*{margin:0px;padding:0px;}
-ul,li{list-style:none;}
-a,a:hover{text-decoration:none;}
-/*pcNav*/
-#pcNav{background:rgba(0,0,0,0.42);width:100%;height:auto;}
-#pcNav .type,.enter{height:auto;}
-#pcNav .type ul li,#pcNav .enter ul li{padding:0px;}
-#pcNav ul li a{color:#9d9d9d;}
-#pcNav .type ul li{font-size:1.4em;text-align:center;height:100px;}
-#pcNav .type .nav a{display:block;height:100px;padding-top:40px;}
-#pcNav .type .logo img{height:100px;}
-#pcNav .enter ul li{height:30px;margin-top:70px;}
-#pcNav .enter ul li a{height:30px;display:block;text-align:center;padding-top:4px;}
-/*/pcNav*/
-/*phoneNav*/
-.navbar-default{background:rgba(0,0,0,0.42);border:none;}
-.navbar-default .navbar-nav>li>a{color:#8e8e8e;}
-.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{color:white;background-color:transparent;background:#008cba;}
-.navbar-brand{padding:0px;}
-/*/phoneNav*/
-#sosuo{
-	padding:10px 0px 10px 5px;
-	border-bottom:1px solid #8e8e8e;
-	height:55px;
-	background:rgba(0,0,0,0.42);
-	width:100%;
-}
-#backTop{background:#272727;font-size:30px;height:50px;width:50px;border-radius:25px;color:#9d9d9d;text-align:center;padding-top:8px;position:fixed;right:15%;bottom:150px;z-index:3;display:none;}
-#backTop:hover{background:#0d91d6;color:white;}
-#content .breadcrumb{font-size:18px;background:rgba(0,0,0,0.12);}
-#content{
-	margin-top:10px;
-	padding:0px;
-}
-.content-left{height:600px;}
-.content-right{height:1500px;}
+.content-left{height:auto;}
+.content-right{height:auto;padding:10px;}
 .content-left,.content-right{background:rgba(0, 0, 0, 0.12);}
-#foot{background:black;height:50px;color:#3c3c3c;line-height:50px;margin-top:10px;border-top:2px solid #adadad;}
-/*背景图片*/
-.scanlines {position: fixed;top: 0px;left: 0px;width: 100%;height: 100%;z-index: -1;background: url(images/tile.png);}
+.content-left .userInfo{height:auto;margin-top:10px;}
+.content-left .userInfo ul li{height:30px;line-height:30px;}
+.content-left .list{border-top:1px solid #8e8e8e;}
+.content-left .list ul li{height:30px;line-height:30px;}
+.content-right .blog-content{text-indent:2em;}
+.content-right .blog-oper{margin:50px 0px;}
+.content-right .comment{height:auto;border-top:1px solid #8e8e8e;}
+.content-right .comment-list{border-bottom:1px solid #3c3c3c;padding:10px;}
+.content-right .comment-content{border:1px solid #8e8e8e;padding:10px;margin-top:20px;border-radius: 5px;}
 </style>
 </head>
 <body>
@@ -101,9 +72,9 @@ a,a:hover{text-decoration:none;}
 <!-- sosuo -->
 <div id="sosuo">
 	<!-- <div class="container"> -->
-		<div class="col-sm-4 col-sm-offset-2 sosuo-input">
+		<div class="col-sm-8 col-sm-offset-2 sosuo-input">
 			<div class="col-sm-12">
-				<div class="col-sm-10">   	
+				<div class="col-sm-8">   	
 				   	<div class="input-group">
 				        <input type="text" class="form-control" placeholder="没有搜不到，只有想不到">
 				        <span class="input-group-btn">
@@ -113,12 +84,21 @@ a,a:hover{text-decoration:none;}
 				        </span>
 				    </div>
 				</div>
-				<div class="col-sm-2 hidden-xs">
-					<span class="input-group-btn">
+				<div class="col-sm-4 hidden-xs">
+					<div class="col-sm-6">
+						<span class="input-group-btn">
 				            <button class="btn btn-primary" type="button">
 				                <span class="glyphicon glyphicon-pencil"></span>&nbsp;我要提问
 				            </button>
 				        </span>
+				    </div>
+				    <div class="col-sm-6">
+				    	<span class="input-group-btn">
+					            <button class="btn btn-primary" type="button">
+				                <span class="glyphicon glyphicon-pencil"></span>&nbsp;写文章
+				            </button>
+				        </span>
+				    </div>
 				</div>
 			</div>
 		</div>
@@ -137,64 +117,119 @@ a,a:hover{text-decoration:none;}
 	</div>
 	<div class="col-sm-12 content">
 		<div class="col-sm-4 content-left">
-
+			<div class="userInfo">
+				<img src="images/userPic.jpg" class="img-thumbnail" width="120px">
+				<ul class="pro">
+					<li>博名：jsosuo</li>
+					<li>博文：320</li>
+				</ul>
+			</div>
+			<div class="list">
+				<h3>TA的博文</h3>
+				<h4>git</h4>
+				<ul>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+				</ul>
+				<h4>php</h4>
+				<ul>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+					<li><a href="">git的使用与技巧，包让你学会</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="col-sm-8 content-right">
-
+			<div class="col-sm-12">
+				<div class="text-center">
+					<h4>git的使用技巧，是你熟练使用git</h4>
+					<h4>
+						<small>
+							日期：<span>2016-03-21</span>&nbsp;&nbsp;
+							博主：<span>jsosuo</span>&nbsp;&nbsp;
+							分类：<span>php</span>&nbsp;&nbsp;
+							阅读：<span>32</span>&nbsp;&nbsp;
+						</small>
+					</h4>
+				</div>
+				<p class="blog-content">
+					git的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用gitgit的使用技巧，是你熟练使用git
+				</p>
+				<p class="text-center blog-oper">
+					<a class="btn btn-primary btn-lg glyphicon glyphicon-thumbs-up">&nbsp;23</a>&nbsp;&nbsp;
+					<a class="btn btn-primary btn-lg glyphicon glyphicon-thumbs-down">&nbsp;23</a>
+				</p>
+			</div>
+			<div class="col-sm-12">
+				<div class="comment">
+					<h4>评论</h4>
+					<div class="col-sm-12">
+						<div class="comment-list">
+							<img class="userPic" src="images/userPic1.jpg" width="50px">
+							<p class="comment-content">非常不错</p>
+							<p class="text-right">2016-09-13 09:45:23</p>
+							<div>
+								<img  class="userPic" src="images/userPic.jpg" width="50px">
+								回复
+								<img class="userPic" src="images/userPic1.jpg" width="50px">
+								<p class="comment-content">非常不错</p>
+								<p class="text-right">2016-09-13 09:45:23</p>
+							</div>
+						</div>
+						<div class="comment-list">
+							<img class="userPic" src="images/userPic.jpg" width="50px">
+							<p class="comment-content">非常不错</p>
+							<p class="text-right">2016-09-13 09:45:23</p>
+						</div>
+						<div class="comment-list">
+							<img class="userPic" src="images/userPic1.jpg" width="50px">
+							<p class="comment-content">非常不错</p>
+							<p class="text-right">2016-09-13 09:45:23</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12" style="height:500px;background:#adadad;">;k</div>	
 		</div>
 	</div>
 </div>
 <!-- /content -->
-<!-- share -->
-
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-<!-- /share -->
 <!-- foot -->
 <div id="foot">
 	<p class="text-center">Copyright @ 2016 捷搜索 皖ICP备16017589号-1</p>
 </div>
 <!-- /foot -->
+<!-- userInfo -->
+<div id="userInfo">
+	<div class="top">
+		<img src="images/userPic1.jpg" width="50px" class="img-circle img-rounded">&nbsp;
+		<span class="userName">jsosuo</span>
+	</div>
+	<div class="content userSign">
+		我可以不聪明，但是我一定要努力，努力可以解决难题
+	</div>
+	<div class="foot userCnt">
+		发表文章 <span class="wenCnt">12</span>&nbsp;&nbsp;
+	</div>
+	<i class="bottom"></i>
+</div>	
+<!-- /userInfo -->
 <!-- backTop -->
 <div id="backTop">
 	<span class="glyphicon glyphicon-arrow-up"></span>
 </div>
 <!-- /backTop -->
+<!-- ask question -->
+<div class="visible-xs-block" id="ask-question">
+	<span class="glyphicon glyphicon-pencil"></span>
+</div>
+<!-- /ask question -->
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-<script>
-$.backstretch("images/1.jpg");
-// 导航栏
-$("#pcNav ul li").hover(function(){
-	$(this).css({"background":"#6c6c6c"});
-	$(this).find("a").css("color","white");
-},function(){
-	$(this).css("background","rgba(0,0,0,0.42)");
-	$(this).find("a").css("color","#9d9d9d");
-});
-// 搜索
-$(window).scroll(function(event){
-	var ss = $("#sosuo");
-	var wW = $(window).width();
-	if(wW>768)var s = 100;
-	else var s = 50;
-	if($(window).scrollTop()>s)
-	ss.css({"position":"fixed","top":"0px","left":"0px","width":"100%","z-index":"99"});
-	else
-	ss.css({"position":"relative","z-index":"1"});
-});
-//回到顶部
-$("#backTop").click(function(){
-	$("html,body").animate({"scrollTop":"0"},300);
-});
-//动态加载
-$(window).scroll(function(event){
-	if($(window).scrollTop()>1000){
-		$("#backTop").show();
-	}else{
-		$("#backTop").hide();
-	}
-});
-</script>
+<script type="text/javascript" src="js/base.js"></script>
 </html>

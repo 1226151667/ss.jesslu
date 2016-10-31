@@ -6,47 +6,6 @@
 <link href="images/logo.ico" rel="shortcut icon" type="image/x-icon" />
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <style>
-@font-face { 
-  font-family: 'liaocao'; 
-  src: url('./fonts/liaocao.ttf');
-   font-weight: normal;
-  font-style: normal; 
-}
-body{font-family:"微软雅黑","黑体","宋体";font-size:14px;}
-*{margin:0px;padding:0px;}
-ul,li{list-style:none;}
-a,a:hover{text-decoration:none;}
-/*pcNav*/
-#pcNav{background:#3c3c3c;width:100%;height:auto;}
-#pcNav .type,.enter{height:auto;}
-#pcNav .type ul li,#pcNav .enter ul li{padding:0px;}
-#pcNav ul li a{color:#9d9d9d;}
-#pcNav .type ul li{font-size:1.4em;text-align:center;height:100px;}
-#pcNav .type .nav a{display:block;height:100px;padding-top:40px;}
-#pcNav .type .logo img{height:100px;}
-#pcNav .enter ul li{height:30px;margin-top:70px;}
-#pcNav .enter ul li a{height:30px;display:block;text-align:center;padding-top:4px;}
-/*/pcNav*/
-/*phoneNav*/
-.navbar-default{background:#3c3c3c;border:none;}
-.navbar-default .navbar-nav>li>a{color:#8e8e8e;}
-.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{color:white;background-color:transparent;background:#008cba;}
-.navbar-brand{padding:0px;}
-/*/phoneNav*/
-#sosuo{
-	padding:10px 0px 10px 5px;
-	border-bottom:2px solid #e0e0e0;
-	height:55px;
-	background:#f0f0f0;
-	width:100%;
-}
-#content{
-	margin-top:10px;
-}
-#foot{background:black;height:50px;color:#3c3c3c;line-height:50px;margin-top:10px;border-top:2px solid #adadad;}
-#ask-question{background:rgba(13,145,214,0.8);font-size:30px;height:60px;width:60px;border-radius:30px;color:#eee;text-align:center;padding-top:8px;position:fixed;right:42%;bottom:10px;z-index:3;padding-top:13px}
-#content .breadcrumb{font-size:18px;}
-
 /*开始*/
 #content .type{margin:30px 0px;color:white;}
 #content .type div h3{margin-top:10px;}
@@ -55,8 +14,6 @@ a,a:hover{text-decoration:none;}
 #content .type strong{color:black;}
 #content .type a{color:#e0e0e0;font-size:15px;border:1px solid #bebebe;}
 #content .type a:hover{color:white;font-size:16px;border:1px solid #eee;}
-
-
 
 /*结束*/
 
@@ -89,6 +46,7 @@ a,a:hover{text-decoration:none;}
 </style>
 </head>
 <body>
+<div class="scanlines"></div>
 <!-- pcNav -->
 <div id="pcNav" class="hidden-xs">
 	<div class="container">
@@ -286,29 +244,6 @@ a,a:hover{text-decoration:none;}
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script>
-// 导航栏
-$("#pcNav ul li").hover(function(){
-	$(this).css({"background":"#008cba"});
-	$(this).find("a").css("color","white");
-},function(){
-	$(this).css("background","#3c3c3c");
-	$(this).find("a").css("color","#9d9d9d");
-});
-// 搜索
-$(window).scroll(function(event){
-	var ss = $("#sosuo");
-	var wW = $(window).width();
-	if(wW>768)var s = 100;
-	else var s = 50;
-	if($(window).scrollTop()>s)
-	ss.css({"position":"fixed","top":"0px","left":"0px","width":"100%","z-index":"99"});
-	else
-	ss.css({"position":"relative","z-index":"1"});
-});
-//回到顶部
-$("#backTop").click(function(){
-	$("html,body").animate({"scrollTop":"0"},300);
-});
-</script>
+<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
 </html>
