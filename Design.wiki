@@ -1,0 +1,43 @@
+问答社区 
+--页面：
+	--问题分类页
+	--问题列表页
+	--问题详情页
+--用户功能：
+	--申请添加问题的分类
+	--提出问题（删除问题）
+	--回答问题
+	--回复别人
+	--打赏、赞同、反对某人的回答
+	备注：这些都需要用户登录才能完成
+--数据库设计：
+	--问题分类表-type:id, name, description, tm,pId, state.
+		--state:0/1， 分别代表不使用/使用
+	--问题表-----question:id, userId, typeId, title, content, clickCnt, repleyCnt, tm.
+	--回答表-----answer:id, userId, questionId, content, tm, upCnt, downCnt.
+	--回复表-----reply:id, userId, answerId, content, tm
+
+技术博客
+--页面：
+	--博客列表页
+	--博客详情页
+--用户功能：
+	--成为博主，写博文（删除博文）
+	--打赏、赞同、反对某博文的观点
+	备注：这些都需要用户登录才能完成
+--数据库设计：
+	--博文表----blog:id, userId, typeId, title, content, clickCnt, commentCnt, upCnt, downCnt, tm.
+
+用户中心：
+--数据库设计：
+	--用户表---------user:id, uname, pwd, phone.
+	--用户详情表-----userInfo:id, picId, userId, city, six, integral, jbi, tm.
+	--打赏表---------reward:id, userId, type, targetId, jbi, state, tm.
+	--state:0/1， 分别代表成功/未成功
+	--type:0/1 分别代表回答/博客
+	--提现表---------apply:id, userId, jbi, state, createTm, tm.
+	--state:0/1/2 分别代表成功/失败/未处理
+	备注：打赏时，会以积分形式给用户，1元人民币=10捷币 最低操作1捷币 
+	--投票表---------vote:id, userId, type, targetId, state.
+	--state:0/1 分别代表赞同/反对
+	--type:0/1 分别代表回答/博客

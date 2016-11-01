@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<style>
+/*背景图片*/
+.scanlines {position: fixed;top: 0px;left: 0px;width: 100%;height:100%;z-index: -1;background: url(./images/tile.png);}
+#edit{margin-top:100px;}
+#btn{margin-top:20px;}
+#btn a{font-size:20px;}
+.title{color:white;font-size:25px;margin-bottom:20px;}
+@media only screen and (max-width: 767px){
+	#edit{margin-top:0px;}
+}
+</style>
+</head>
+<body>
+<div class="scanlines"></div>
+<div id="edit" class="col-sm-6 col-sm-offset-3">
+	<div class="col-sm-12">
+		<h2 class="title">欢迎进入编辑页面</h2>
+	</div>
+	<div class="col-sm-12"> 	
+	 	<!-- 加载编辑器的容器 -->
+	    <script id="container" name="content" type="text/plain">快点写点什么吧</script>
+	    <!-- 配置文件 -->
+	    <script type="text/javascript" src="edit/ueditor.config.js"></script>
+	    <!-- 编辑器源码文件 -->
+	    <script type="text/javascript" src="edit/ueditor.all.js"></script>
+	    <!-- 实例化编辑器 -->
+	    <script type="text/javascript">
+	        var ue = UE.getEditor('container',{
+	            toolbars:[
+	                        [
+	                            'source','undo','redo','fontfamily','fontsize','paragraph','insertcode','customstyle','emotion','spechars','bold',
+	                            'italic','underline','strikethrough','snapscreen','simpleupload','insertimage','map','gmap','link','indent','preview',
+	                            'selectall','horizontal','cleardoc','insertvideo','justifyleft','justifyright','justifycenter','justifyjustify','forecolor',
+	                            'backcolor','insertorderedlist','insertunorderedlist','fullscreen','rowspacingtop','rowspacingbottom','pagebreak','attachment',
+	                            'lineheight','edittip ','autotypeset','background','template',
+	                        ]
+	                    ]
+	        });
+	    </script>
+	</div>
+    <div class="col-sm-12" id="btn">
+	    <a class="btn btn-primary col-sm-4"><span class="glyphicon glyphicon-ok"></span>&nbsp;提&nbsp;交</a>
+	    <a class="btn btn-primary col-sm-4 col-sm-offset-4"><span class="glyphicon glyphicon-remove"></span>&nbsp;取&nbsp;消</a>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</html>
