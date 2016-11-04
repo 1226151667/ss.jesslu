@@ -15,7 +15,8 @@
 		--state:0/1， 分别代表不使用/使用
 	--问题表-----question:id, userId, typeId, title, content, clickCnt, repleyCnt, tm.
 	--回答表-----answer:id, userId, questionId, content, tm, upCnt, downCnt.
-	--回复表-----reply:id, userId, answerId, content, tm
+	--回复表-----reply:id, userId, type, targetId, content, tm
+	--type:0/1 分别代表回答/博客评论
 
 技术博客
 --页面：
@@ -27,11 +28,12 @@
 	备注：这些都需要用户登录才能完成
 --数据库设计：
 	--博文表----blog:id, userId, typeId, title, content, clickCnt, commentCnt, upCnt, downCnt, tm.
+	--评论表----comment:id, userId, blogId, content, tm.
 
 用户中心：
 --数据库设计：
-	--用户表---------user:id, uname, pwd, phone.
-	--用户详情表-----userInfo:id, picId, userId, city, six, integral, jbi, tm.
+	--用户表---------user:id, nickName, pwd, picId, ipArea, six, integral, jbi, tm, phone, state.
+	--state:0/1 分别代表正常/冻结
 	--打赏表---------reward:id, userId, type, targetId, jbi, state, tm.
 	--state:0/1， 分别代表成功/未成功
 	--type:0/1 分别代表回答/博客
