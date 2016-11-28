@@ -1,0 +1,77 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>管理端-捷搜索</title>
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/admin-base.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<include file="./Public/Admin/nav.html" />
+    <div class="tab-pane" id="user">
+		<h4>充值捷币管理</h4>
+		<div class="oper col-sm-12">
+			<div class="col-sm-2">
+				<a class="btn btn-primary">导出</a>
+	
+				<a class="btn btn-primary">刷新</a>
+			</div>
+			<div class="col-sm-5">	
+				<div class="input-group">
+			        <input type="text" class="form-control" placeholder="在这里可以搜索任何选项">
+			        <span class="input-group-btn">
+			            <button class="btn btn-primary" type="button">
+			                <span class="glyphicon glyphicon-search"></span>&nbsp;搜 索
+			            </button>
+			        </span>
+			    </div>
+			</div>
+		</div>
+		 <table class="table table-hover table-bordered table-responsive">
+			<thead>
+				<tr>
+					<th>昵称</th>
+					<th>充值捷币数</th>
+					<th>实际付款</th>
+					<th>状态</th>
+					<th>创建时间</th>
+					<th>交易时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="data.list" id="v">
+					<tr>
+						<td>
+							{$v.nickName}<a href="http://www.jesslu.com">查看</a>
+						</td>
+						<td>
+							{$v.jbi}
+						</td>
+						<td>
+							{$v.amount}
+						</td>
+						<td>
+							<switch name="v.state" >
+								<case value="0">正在付款中</case>
+								<case value="1">付款成功</case>
+								<case value="2">付款失败</case>
+								<default />未知状态
+							</switch>
+						</td>
+						<td>
+							{$v.createTm}
+						</td>
+						<td>
+							{$v.tm}
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div class="show-page">{$data['show']}</div>
+  </div>
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+</html>

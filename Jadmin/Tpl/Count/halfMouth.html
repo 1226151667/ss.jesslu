@@ -1,0 +1,449 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>管理端-捷搜索</title>
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/admin-base.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<include file="./Public/Admin/nav.html" />
+ 	<div class="tab-pane active" id="halfMouth">
+		<h3>半月走势图</h3>
+        <div id="userTb" class="tbJquery"></div>
+        <div id="visitTb" class="tbJquery"></div>
+        <div id="questionTb" class="tbJquery"></div>
+        <div id="answerTb" class="tbJquery"></div>
+        <div id="articleTb" class="tbJquery"></div>
+        <div id="jbiTb" class="tbJquery"></div>
+        <div id="rewardTb" class="tbJquery"></div>
+        <div id="commentTb" class="tbJquery"></div>
+        <div id="replyTb" class="tbJquery"></div>
+  </div>
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/tb/highcharts.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/tb/exporting.js"></script>
+<script>
+$(function () {
+    var Data = <?php echo $Data;?>;
+    var uD=[]; var uT=[]; var utD=[];
+    var qD=[]; var qtD=[]; var qT=[];
+    var anD=[]; var antD=[]; var anT=[];
+    var arD=[]; var artD=[]; var arT=[];
+    var cD=[]; var ctD=[]; var cT=[];
+    var repD=[]; var reptD=[]; var repT=[];
+    var rewD=[]; var rewtD=[]; var rewT=[];
+    var jD=[]; var jtD=[]; var jT=[];
+    var vD=[]; var vtD=[]; var vT=[]; var ipD=[]; var iptD=[];
+    $(Data).each(function(i,v){
+        $(v.user).each(function(i,v){
+            uD.push(parseInt(v.cnt));
+            utD.push(parseInt(v.tCnt));
+            uT.push(v.date);
+        });
+        $(v.question).each(function(i,v){
+            qD.push(parseInt(v.cnt));
+            qtD.push(parseInt(v.tCnt));
+            qT.push(v.date);
+        });
+        $(v.answer).each(function(i,v){
+            anD.push(parseInt(v.cnt));
+            antD.push(parseInt(v.tCnt));
+            anT.push(v.date);
+        });
+        $(v.article).each(function(i,v){
+            arD.push(parseInt(v.cnt));
+            artD.push(parseInt(v.tCnt));
+            arT.push(v.date);
+        });
+        $(v.comment).each(function(i,v){
+            cD.push(parseInt(v.cnt));
+            ctD.push(parseInt(v.tCnt));
+            cT.push(v.date);
+        });
+        $(v.reply).each(function(i,v){
+            repD.push(parseInt(v.cnt));
+            reptD.push(parseInt(v.tCnt));
+            repT.push(v.date);
+        });
+        $(v.reward).each(function(i,v){
+            rewD.push(parseInt(v.cnt));
+            rewtD.push(parseInt(v.tCnt));
+            rewT.push(v.date);
+        });
+        $(v.jbi).each(function(i,v){
+            jD.push(parseInt(v.cnt));
+            jtD.push(parseInt(v.tCnt));
+            jT.push(v.date);
+        });
+        $(v.visit).each(function(i,v){
+            vD.push(parseInt(v.cnt));
+            vtD.push(parseInt(v.tCnt));
+            vT.push(v.date);
+            ipD.push(parseInt(v.ipCnt));
+            iptD.push(parseInt(v.iptCnt));
+        });
+    });
+      //图表-用户统计
+    $('#userTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '用户统计'
+        },
+        xAxis: {
+            categories:uT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '用户总数',
+            data: utD
+        },{
+            name: '新增用户数',
+            data: uD
+        }]
+    });
+    //图表-访问统计
+    $('#visitTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '访问统计'
+        },
+        xAxis: {
+            categories:vT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '访问量总数',
+            data: vtD
+        },{
+            name: '新增访问量',
+            data: vD
+        },{
+            name: 'IP总数',
+            data: iptD
+        },{
+            name: '新增IP数',
+            data: ipD
+        }]
+    });
+    //图表-问题统计
+    $('#questionTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '问题统计'
+        },
+        xAxis: {
+            categories:qT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '问题总数',
+            data: qtD
+        },{
+            name: '新增问题数',
+            data: qD
+        }]
+    });
+    //图表-回答统计
+    $('#answerTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '回答统计'
+        },
+        xAxis: {
+            categories:anT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '回答总数',
+            data: antD
+        },{
+            name: '新增回答数',
+            data: anD
+        }]
+    });
+    //图表-博文统计
+    $('#articleTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '博文统计'
+        },
+        xAxis: {
+            categories:arT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '博文总数',
+            data: artD
+        },{
+            name: '新增博文数',
+            data: arD
+        }]
+    });
+    //图表-充值捷币统计
+    $('#jbiTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '捷币充值统计'
+        },
+        xAxis: {
+            categories:jT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '捷币总数',
+            data: jtD
+        },{
+            name: '新增充值捷币数',
+            data: jD
+        }]
+    });
+    //图表-打赏统计
+    $('#rewardTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '打赏统计'
+        },
+        xAxis: {
+            categories:rewT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '打赏总数',
+            data: rewtD
+        },{
+            name: '新增打赏数',
+            data: rewD
+        }]
+    });
+    //图表-评论统计
+    $('#commentTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '评论统计'
+        },
+        xAxis: {
+            categories:cT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '评论总数',
+            data: ctD
+        },{
+            name: '新增评论数',
+            data: cD
+        }]
+    });
+    //图表-回复统计
+    $('#replyTb').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '回复统计'
+        },
+        xAxis: {
+            categories:repT
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '人数（个）'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 个</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.0,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '回复总数',
+            data: reptD
+        },{
+            name: '新增回复数',
+            data: repD
+        }]
+    });
+});
+</script>
+</html>

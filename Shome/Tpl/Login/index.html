@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<style>
+.page{margin-top:100px;}
+.page .form-control{height:40px;}
+.nav{margin-bottom:20px;}
+.foot{color:#adadad;font-size:14px;}
+.logo{margin:10px 0px;}
+
+.reg-getp{height:10px;color:#adadad;}
+.reg-getp .reg{float:left;}
+.reg-getp .getp{float:right;}
+
+.Other{width:100%;height:60px;margin:0 auto;border:1px solid #e0e0e0;margin:50px 0px;}
+.otherLogin{position:relative;top:-10px;width:200px;height:100px;margin:0 auto;}
+.otherLogin p{font-size:16px;font-weight:bold;color:#adadad}
+.otherLogin .otherLogin-pic{padding-top:5px;}
+.otherLogin .otherLogin-pic div{float:left;height:50px;width:50px;background:url(__ROOT__/Resources/images/login.png) no-repeat;border-radius:25px;cursor:pointer;}
+.otherLogin .otherLogin-pic div:hover{border:3px solid #696969;}
+.otherLogin .otherLogin-pic .wx{background-position:-55px -2px;}
+.otherLogin .otherLogin-pic .qq{background-position:0px -2px;margin:0px 25px;}
+.otherLogin .otherLogin-pic .wb{background-position:0px -103px;}
+
+.content-inline{padding:0px;margin-bottom:15px;}
+@media (max-width:767px){
+  .content{padding:0px 5px;}
+  .page{margin-top:0px;}
+}
+@media (min-width:768px){
+
+}
+@media (min-width:768px) and (max-width:992px){
+
+}
+@media (min-width:1200){
+
+}
+</style>
+</head>
+<body leftmargin=0 topmargin=0 ondragstart='return false' onselectstart ='return false'>
+<div class="container page">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 text-center content">
+        <div class="col-sm-12 logo">
+          <a href="__ROOT__"><img src="__ROOT__/Resources/images/logo1.png" width="60%"></a>
+          <h4>与人分享，快乐大家，赶快加入吧</h4>
+        </div>
+          <div class="tab-pane active" id="login">
+              <form role="form">
+                <div class="form-group">
+                  <input name="email" type="text" class="form-control" placeholder="邮箱账号">
+                </div>
+                <div class="form-group">
+                  <input name="pwd" type="password" class="form-control" placeholder="密码">
+                </div>
+<!--                 <div class="form-group text-left">
+                  <div class="col-sm-12">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox">请记住我
+                      </label>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <input type="button" class="form-control btn-primary sub" value="确 认 登 录">
+                </div>
+              </form>
+              <div class="reg-getp">
+                <span class="reg">还没账号呢？现在去<a href="__ROOT__/index.php/Register">注册</a></span>
+                <span class="getp"><a href="__ROOT__/index.php/Getpwd">忘记密码</a></span>
+              </div>
+            <div class="Other">
+              <div class="otherLogin">
+                  <p class="text-center">其它登录方式</p>
+                  <div class="otherLogin-pic">
+                    <div class="wx"></div>
+                    <div class="qq"></div>
+                    <div class="wb"></div>
+                  </div>
+              </div>
+            </div>
+          </div> 
+        <div class="col-sm-12 foot">
+            Copyright @ 2016 捷搜索 皖ICP备16017589号-1
+        </div>
+      </div>
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/reset.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/visitInfo.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/login.js"></script>
+</html>

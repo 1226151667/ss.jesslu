@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<style>
+.ui-bar-a,.ui-page-theme-a .ui-bar-inherit,html .ui-bar-a .ui-bar-inherit,html .ui-body-a .ui-bar-inherit,html body .ui-group-theme-a .ui-bar-inherit{text-shadow:none;}
+.ui-overlay-a,.ui-page-theme-a,.ui-page-theme-a .ui-panel-wrapper{text-shadow:none;}
+.ui-body-a,.ui-page-theme-a .ui-body-inherit,html .ui-bar-a .ui-body-inherit,html .ui-body-a .ui-body-inherit,html body .ui-group-theme-a .ui-body-inherit,html .ui-panel-page-container-a{text-shadow:none;}
+.ui-page-theme-a a:active,html .ui-bar-a a:active,html .ui-body-a a:active,html body .ui-group-theme-a a:active{color:#059}.ui-page-theme-a .ui-btn,html .ui-bar-a .ui-btn,html .ui-body-a .ui-btn,html body .ui-group-theme-a .ui-btn,html head+body .ui-btn.ui-btn-a,.ui-page-theme-a .ui-btn:visited,html .ui-bar-a .ui-btn:visited,html .ui-body-a .ui-btn:visited,html body .ui-group-theme-a .ui-btn:visited,html head+body .ui-btn.ui-btn-a:visited{text-shadow:none;}
+.ui-page-theme-a .ui-btn:hover,html .ui-bar-a .ui-btn:hover,html .ui-body-a .ui-btn:hover,html body .ui-group-theme-a .ui-btn:hover,html head+body .ui-btn.ui-btn-a:hover{text-shadow:none;}
+.ui-page-theme-a .ui-btn:active,html .ui-bar-a .ui-btn:active,html .ui-body-a .ui-btn:active,html body .ui-group-theme-a .ui-btn:active,html head+body .ui-btn.ui-btn-a:active{text-shadow:none}
+.ui-page-theme-a .ui-btn.ui-btn-active,html .ui-bar-a .ui-btn.ui-btn-active,html .ui-body-a .ui-btn.ui-btn-active,html body .ui-group-theme-a .ui-btn.ui-btn-active,html head+body .ui-btn.ui-btn-a.ui-btn-active,.ui-page-theme-a .ui-checkbox-on:after,html .ui-bar-a .ui-checkbox-on:after,html .ui-body-a .ui-checkbox-on:after,html body .ui-group-theme-a .ui-checkbox-on:after,.ui-btn.ui-checkbox-on.ui-btn-a:after,.ui-page-theme-a .ui-flipswitch-active,html .ui-bar-a .ui-flipswitch-active,html .ui-body-a .ui-flipswitch-active,html body .ui-group-theme-a .ui-flipswitch-active,html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,.ui-page-theme-a .ui-slider-track .ui-btn-active,html .ui-bar-a .ui-slider-track .ui-btn-active,html .ui-body-a .ui-slider-track .ui-btn-active,html body .ui-group-theme-a .ui-slider-track .ui-btn-active,html body div.ui-slider-track.ui-body-a .ui-btn-active{text-shadow:none}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{text-shadow:none;}
+.ui-page-theme-b .ui-btn, html .ui-bar-b .ui-btn, html .ui-body-b .ui-btn, html body .ui-group-theme-b .ui-btn, html head+body .ui-btn.ui-btn-b, .ui-page-theme-b .ui-btn:visited, html .ui-bar-b .ui-btn:visited, html .ui-body-b .ui-btn:visited, html body .ui-group-theme-b .ui-btn:visited, html head+body .ui-btn.ui-btn-b:visited{text-shadow:none;}
+
+.page{background:rgba(49,112,143,0.9);color:white;width:100%;height:100%;}
+.page .ui-input-text, .ui-input-search{border-style:none;}
+.page a{color:#adadad;}
+.page a:hover{color:white;}
+.page h2{color:white;text-shadow:none;}
+.page button{text-shadow:none;}
+.page .top{background:rgba(49,112,143,0.9);}
+.page form button{margin:30px 0px 30px 0px;}
+/*.Service-provision input{margin:0px;height:16px;width:16px;margin-top:7px;}*/
+/*.Service-provision{font-size:0.9em;height:30px;line-height:30px;}*/}
+.otherLogin p{margin-top:10px;text-shadow:none;}
+.otherLogin .otherLogin-pic{width:299px;height:50px;margin:0 auto;border:1px solid white;padding:11px;}
+.otherLogin .otherLogin-pic div{float:left;height:50px;width:50px;background:url(images/login.png) no-repeat;border:2px solid white;border-radius:25px;}
+.otherLogin .otherLogin-pic .wx{background-position:-55px -2px;margin:0px 25px;}
+.otherLogin .otherLogin-pic .sms{background-position:-55px -104px;}
+.otherLogin .otherLogin-pic .qq{background-position:0px -2px;margin-right:25px;}
+.otherLogin .otherLogin-pic .wb{background-position:0px -103px;}
+.page .foot{height:30px;width:100%;padding:0px 5px;position:absolute;bottom:0px;left:0px;line-height:30px;font-size:13px;}
+.page .foot .toRegister{float:left;color:#adadad;}
+.page .foot .getPwd{float:right;color:#adadad;}
+.page .logo{text-align:center;margin:5% 0%;}
+
+.getSms .ui-input-text{
+  float:left;width:51%;
+}
+.getSms a{margin-top:8px;width:45%;border-radius:5px;}
+/*.getSms button{width:50%;height:50px;}*/
+/*.otherLogin p{text-align:center;}*/
+</style>
+<!-- 登录页 -->
+<div data-role="page" id="login" class="page">
+  <div data-role="header" class="top">
+    <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-b ui-btn-icon-notext">图标</a>
+    <h2>登录-捷搜索</h2>
+    <a href="#" class="ui-btn ui-corner-all ui-icon-refresh ui-btn-b ui-btn-icon-notext">图标</a>
+  </div>
+  <div class="logo"><img src="images/logo.png" width="40%"></div>
+    <div data-role="main" class="ui-content">
+      <form method="post" action="index.html">
+        <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="用户名/手机号">
+        <input type="password" name="fname" id="fname" data-clear-btn="true" placeholder="密码">
+        <button type="button" class="ui-btn ui-corner-all ui-btn-b">确 认 登 录</button>
+      </form>
+    </div>
+    <div class="otherLogin">
+      <p class="text-center">其它登录方式</p>
+      <div class="otherLogin-pic">
+      <div class="sms"></div>
+      <div class="wx"></div>
+      <div class="qq"></div>
+      <div class="wb"></div>
+    </div>
+  </div>
+  <div class="foot">
+    <a href="#register" data-transition="flow" class="toRegister">还没有账号呢?立即注册</a>
+    <a href="#getPwd" data-transition="flow" class="getPwd">忘记密码?</a>
+  </div>
+</div>
+<!-- /登录页 -->
+<!-- 注册页 -->
+<div data-role="page" id="register" class="page">
+  <div data-role="header" class="top">
+    <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-b ui-btn-icon-notext">图标</a>
+    <h2>注册-捷搜索</h2>
+    <a href="#" class="ui-btn ui-corner-all ui-icon-refresh ui-btn-b ui-btn-icon-notext">图标</a>
+  </div>
+  <div class="logo"><img src="images/logo.png" width="40%"></div>
+    <div data-role="main" class="ui-content">
+      <form method="post" action="index.html">
+        <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="用户名">
+        <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="手机号">
+        <div class="getSms">
+          <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="验证码">
+          <a class="ui-btn ui-btn-inline ui-mini ui-btn-b">获取验证码</a>
+        </div>
+        <input type="password" name="fname" id="fname" data-clear-btn="true" placeholder="输入密码">
+        <input type="password" name="fname" id="fname" data-clear-btn="true" placeholder="再次输入密码">
+        <button type="button" class="ui-btn ui-corner-all ui-btn-b">确 认 注 册</button>
+      </form>
+    </div>
+  <div class="foot">
+    <a href="#login" data-tainsition="flow" class="toRegister">我有账号了,去登录</a>
+  </div>
+</div>
+<!-- /注册页 -->
+<!-- 找回密码页 -->
+<div data-role="page" id="getPwd" class="page">
+  <div data-role="header" class="top">
+    <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-b ui-btn-icon-notext">图标</a>
+    <h2>找回密码-捷搜索</h2>
+    <a href="#" class="ui-btn ui-corner-all ui-icon-refresh ui-btn-b ui-btn-icon-notext">图标</a>
+  </div>
+  <div class="logo"><img src="images/logo.png" width="40%"></div>
+    <div data-role="main" class="ui-content">
+      <form method="post" action="index.html">
+        <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="手机号">
+        <div class="getSms">
+          <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="验证码">
+          <a class="ui-btn ui-btn-inline ui-mini ui-btn-b">获取验证码</a>
+        </div>
+        <input type="password" name="fname" id="fname" data-clear-btn="true" placeholder="输入密码">
+        <input type="password" name="fname" id="fname" data-clear-btn="true" placeholder="再次输入密码">
+        <button type="button" class="ui-btn ui-corner-all ui-btn-b">确 认 注 册</button>
+      </form>
+    </div>
+  <div class="foot">
+    <a href="#login" data-tainsition="flow" class="toRegister">返回登录</a>
+  </div>
+</div>
+<!-- /找回密码页 -->
+</body>
+</html>

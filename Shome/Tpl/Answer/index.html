@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/base.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/css/answer.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin=0 topmargin=0 ondragstart='return false' onselectstart ='return false'>
+<include file="./Public/Home/nav.html" />
+<!-- content -->
+<div id="content" class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<ol class="breadcrumb">
+				<li><a href="{:U('Index/index')}">首页</a></li>
+				<li><a href="{:U('Question/index')}">问答社区</a></li>
+				<neq name="data.nowType.id" value="0"><li><a href="__URL__/index.php/Question/index?tId={$data.nowType.id}">{$data.nowType.name}</a></li></neq>
+				<li class="active">{$data.q.title}</li>
+			</ol>
+		</div>
+		<div class="col-sm-12">	
+			<div class="content col-sm-12">
+				<div class="col-sm-12 lists">
+					<div class="col-sm-12 list">
+						<div class="col-sm-2 text-center master">
+							<img class="userPic img-rounded" src="__ROOT__{$data.q.iconPath}{$data.q.iconName}" width="100px">
+							<p class="masterName">{$data.q.nickName}</p>
+							<p class="num">楼&nbsp;主</p>
+						</div>
+						<div class="col-sm-10">
+							<div class="col-sm-12">
+								<!-- <i class="jt">我来提问</i>	 -->
+								<div class="list-description">
+									<?php echo htmlspecialchars_decode($data['q']['content']);?>
+								</div>
+								<p class="text-right list-pro">
+									阅读量:<span class="clickCnt">{$data.q.clickCnt}</span>&nbsp;&nbsp;
+									回答量:<span class="clickCnt">{$data.q.anCnt}</span>&nbsp;&nbsp;
+									类别:<span class="clickCnt">{$data.nowType.name}</span>&nbsp;&nbsp;
+									<span class="tm">{$data.q.tm}</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<volist name="data.an" id="v0" key="k0">
+						<div class="col-sm-12 list" title="{$v0.id}">
+							<div class="col-sm-2 text-center master">
+								<img class="userPic img-rounded" src="__ROOT__{$v0.iconPath}{$v0.iconName}" width="100px">
+								<p class="masterName">{$v0.nickName}</p>
+								<p class="num">{$k0}&nbsp;楼</p>
+							</div>
+							<div class="col-sm-10">
+								<div class="col-sm-12">
+									<!-- <i class="jt">听我说</i>	 -->
+									<div class="list-description">
+										<?php echo htmlspecialchars_decode($v0['content']);?>
+									</div>
+									<p class="text-right list-pro">
+										<span class="tm">{$v0.tm}</span>&nbsp;&nbsp;
+									</p>
+									<p class="text-left list-oper">
+										<a type="1" name="up" title="赞同" class="btn-glyphicon btn btn-primary glyphicon glyphicon-thumbs-up vote">&nbsp;{$v0.upCnt}</a>&nbsp;&nbsp;
+										<a type="1" name="down" title="反对" class="btn-glyphicon btn btn-primary glyphicon glyphicon-thumbs-down vote">&nbsp;{$v0.downCnt}</a>&nbsp;&nbsp;
+										<a title="打赏" class="btn-glyphicon btn btn-primary glyphicon glyphicon-heart shang">&nbsp;{$v0.rCnt}</a>&nbsp;&nbsp;
+										<a title="回复" class="btn-glyphicon btn btn-primary glyphicon glyphicon-comment reply">&nbsp;{$v0.cCnt}</a>
+									</p>
+								</div>
+								<div class="col-sm-12 replys">
+									<volist name="data.c" id="v1">
+										<eq name="v1.anId" value="$v0.id">
+											<div class="col-sm-12 list">
+												<p>
+													<img src="__ROOT__{$v1.iconPath}{$v1.iconName}" class="img-circle userPic" width="50px">
+													&nbsp;<span>{$v1.nickName}</sapn>
+												</p>
+												<p class="comment-content">
+													{$v1.content}
+												</p>
+												<p class="text-right list-pro">
+													<a title="回复" class="btn-glyphicon btn btn-primary glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+													<span class="tm">{$v1.tm}</span>
+												</p>
+												<volist name="data.rp" id="v2">
+													<eq name="v2.commentId" value="$v1.id"><p>
+														<img src="__ROOT__{$v2.iconPath}{$v2.iconName}" class="img-circle userPic" width="50px">
+														&nbsp;<span>{$v2.nickName}</span>
+														<span class="huifu">回复</span>
+														<img src="__ROOT__{$v2.toIconPath}{$v2.toIconName}" class="img-circle userPic" width="50px">
+														&nbsp;<span>{$v2.toNickName}</span>
+														</p>
+														<p class="comment-content">
+														{$v2.content}
+														</p>
+														<p class="text-right list-pro">
+															<a title="回复" class="btn-glyphicon btn btn-primary glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+															<span class="tm">{$v2.tm}</span>
+														</p>
+													</eq>
+												</volist>
+											</div>
+										</eq>
+									</volist>
+								</div>
+							</div>
+						</div>
+					</volist>
+					<div class="col-sm-12" id="editAnswer">
+						<span>
+							<i class="glyphicon glyphicon-arrow-right"></i>&nbsp;
+							开 始 谱 写 答 案 之 旅&nbsp;&nbsp;<a target="_blank" href="__URL__/index.php/Edit/index?type=3&q={$data.q.id}">GO</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /content -->
+<!-- foot -->
+<div id="foot">
+	<p class="text-center">Copyright @ 2016 捷搜索 皖ICP备16017589号-1</p>
+</div>
+<!-- /foot -->
+<!-- userInfo -->
+<div id="userInfo">
+	<div class="top">
+		<img src="__ROOT__/Resources/images/userPic1.jpg" width="50px" class="img-circle img-rounded">&nbsp;
+		<span class="userName">jsosuo</span>
+	</div>
+	<div class="content userSign">
+		我可以不聪明，但是我一定要努力，努力可以解决难题
+	</div>
+	<div class="foot userCnt">
+		问题数 <span class="wenCnt">12</span>&nbsp;&nbsp;
+		回答数 <span class="daCnt">12</span>&nbsp;&nbsp;
+		收到打赏 <span class="shangCnt">12.00</span>
+	</div>
+	<i class="bottom"></i>
+</div>	
+<!-- /userInfo -->
+<!-- backTop -->
+<div id="backTop">
+	<span class="glyphicon glyphicon-arrow-up"></span>
+</div>
+<!-- /backTop -->
+<!-- ask question -->
+<div class="visible-xs-block" id="ask-question">
+	<span class="glyphicon glyphicon-pencil"></span>
+</div>
+<!-- /ask question -->
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/reset.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/visitInfo.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/base.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/operate.js"></script>
+</html>

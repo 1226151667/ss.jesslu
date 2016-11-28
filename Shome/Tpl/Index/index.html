@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin=0 topmargin=0 ondragstart='return false' onselectstart ='return false'>
+<div id="bg">
+	<img src="__ROOT__/Resources/images/banner3.png" height="100%" width="100%">
+</div>
+<div id="search">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 logo">
+				<div class="col-sm-8 col-sm-offset-2">
+					<img class="img-responsive" src="__ROOT__/Resources/images/logo1.png" width="60%">
+				</div>
+				<div class="col-sm-12">
+					<h3>我们不创造技术，我们只是技术的搬运工</h3>
+				</div>
+			</div>
+		   	<div class="col-sm-10 col-sm-offset-1">
+<!-- 		   		<div class="col-sm-12"> -->
+					<div class="col-sm-8">
+						<div class="col-sm-12">
+						   	<div class="input-group">
+						        <input type="text" class="form-control" name="key" placeholder="没有搜不到，只有想不到">
+						        <span class="input-group-btn">
+						            <button class="btn btn-success sosuo" type="button">
+						                <span class="glyphicon glyphicon-search"></span> 搜 索
+						            </button>
+						        </span>
+						    </div>
+						</div>
+						<div class="col-sm-12 search-check">
+							<ul>
+								<li class="col-sm-3">随便看看</li>
+								<li class="col-sm-3"><a href="{:U('Question/index')}">问答社区</a></li>
+								<li class="col-sm-3"><a href="{:U('Blog/index')}">技术博客</a></li>
+								<!-- <li class="col-sm-2"><a href="#">插件库</a></li> -->
+								<!-- <li class="col-sm-2"><a href="#">相关新闻</a></li> -->
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<a href="{:U('Edit/index','type=1')}">
+							<button class="btn btn-success" type="button">
+								<span class="glyphicon glyphicon-pencil"></span> 我要提问
+							</button>
+						</a>
+					</div>
+					<div class="col-sm-2">
+						<a href="{:U('Edit/index','type=2')}">
+							<button class="btn btn-success" type="button">
+								<span class="glyphicon glyphicon-pencil"></span> 写文章
+							</button>
+						</a>
+					</div>
+				<!-- </div> -->
+			</div>
+		<div>
+	</div>
+</div>
+<div id="footer">
+	<p class="text-center">Copyright @ 2016 捷搜索 皖ICP备16017589号-1</p>
+</div>
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/reset.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/visitInfo.js"></script>
+<script>
+var imgArr = ["banner1.png","banner2.png","banner3.png","banner4.png"];
+var imgNum = imgArr.length;
+var img = $("#bg img");
+var i = 3;
+function imgChange(){
+	var imgAttr = "__ROOT__/Resources/images/"+imgArr[i];
+	img.attr("src",imgAttr);
+	if(i==(imgNum-1)){
+		i=0;
+	}else{
+		i++;
+	}
+}
+imgChange();
+lbSet = self.setInterval("imgChange()",3000);
+//跳转到搜索页
+// var __ROOT__ = 'http://localhost/ss.jesslu/index.php';
+$(".sosuo").click(function(){
+	var key = $("input[name='key']").val().trim();
+	window.location = "__ROOT__/index.php/Ss/index/key/"+key;
+});
+//按下Enter键搜索
+$(document).on('keyup',function(e){
+      if(e.keyCode === 13){
+   		var frs = $("input[name='key']").is(":focus");
+		if(frs){
+			$(".sosuo").click();
+		}
+      }
+});
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>管理端-捷搜索</title>
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/admin-base.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<include file="./Public/Admin/nav.html" />
+ <div class="tab-pane" id="totalCount">
+  		<h4>每月综合</h4>
+		<div class="oper col-sm-12">
+			<span>每月统计(以下皆是新增数)</span>
+		</div>
+		 <table class="table table-hover table-bordered table-responsive">
+			<thead>
+				<tr>
+					<th>月份</th>
+					<th>用户</th>
+					<th>问题</th>
+					<th>回答</th>
+					<th>博文</th>
+					<th>评论</th>
+					<th>回复</th>
+					<th>浏览量</th>
+					<th>充值(捷币)</th>
+					<th>打赏(捷币)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="data" id="v">
+					<tr>
+						<td>
+							{$v.month}
+						</td>
+						<td>
+							{$v.uCnt}
+						</td>
+						<td>
+							{$v.qCnt}
+						</td>
+						<td>
+							{$v.anCnt}
+						</td>
+						<td>
+							{$v.arCnt}
+						</td>
+						<td>
+							{$v.cCnt}
+						</td>
+						<td>
+							{$v.repCnt}
+						</td>
+						<td>
+							{$v.vCnt}
+						</td>
+						<td>
+							{$v.jCnt}
+						</td>
+						<td>
+							{$v.rewCnt}
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+  </div>
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+</html>

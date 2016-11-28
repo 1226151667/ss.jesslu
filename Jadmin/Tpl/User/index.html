@@ -1,0 +1,91 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>管理端-捷搜索</title>
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/admin-base.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<include file="./Public/Admin/nav.html" />
+    <div class="tab-pane" id="user">
+		<h4>用户管理</h4>
+		<div class="oper col-sm-12">
+			<div class="col-sm-2">
+				<a class="btn btn-primary">导出</a>
+	
+				<a class="btn btn-primary">刷新</a>
+			</div>
+			<div class="col-sm-5">	
+				<div class="input-group">
+			        <input type="text" class="form-control" placeholder="在这里可以搜索任何选项">
+			        <span class="input-group-btn">
+			            <button class="btn btn-primary" type="button">
+			                <span class="glyphicon glyphicon-search"></span>&nbsp;搜 索
+			            </button>
+			        </span>
+			    </div>
+			</div>
+		</div>
+		 <table class="table table-hover table-bordered table-responsive">
+			<thead>
+				<tr>
+					<th>昵称</th>
+					<th>手机号码</th>
+					<th>IP</th>
+					<th>问题数</th>
+					<th>答题采纳数占比</th>
+					<th>博文数</th>
+					<th>捷币</th>
+					<th>积分</th>
+					<th>注册时间</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="data.list" id="user">
+					<tr>
+						<td>
+							<span class="table-special"><eq name="user.state" value="0">正常<else/>禁止</eq></span>&nbsp;
+							{$user.nickName}
+						</td>
+						<td>
+							{$user.phone}&nbsp;<span class="table-special">{$user.phoneArea}</span>
+						</td>
+						<td>
+							{$user.ip}&nbsp;<span class="table-special">{$user.ipArea}</span>
+						</td>
+						<td>
+							{$user.qCnt}
+							<gt name="user.qCnt" value="0">&nbsp;<a target="_blank" href="http://www.jesslu.com">查看</a></gt>
+						</td>
+						<td>
+							{$user.anACnt}/{$user.anCnt}
+							<gt name="user.anCnt" value="0">&nbsp;<a target="_blank" href="http://www.jesslu.com">查看</a></gt>
+						</td>
+						<td>
+							{$user.arCnt}
+							<gt name="user.arCnt" value="0">&nbsp;<a target="_blank" href="http://www.jesslu.com">查看</a></gt>
+						</td>
+						<td>
+							{$user.jbi}
+							<gt name="user.jbi" value="0">&nbsp;<a target="_blank" href="http://www.jesslu.com">明细</a></gt>
+						</td>
+						<td>{$user.integral}</td>
+						<td>{$user.tm}</td>
+						<td>
+							<eq name="user.state" value="0"><span id="user" class="glyphicon glyphicon-lock stop" title="冻结"></span>
+								<else/><span id="user" class="glyphicon glyphicon-ok open" title="解冻"></span>
+							</eq>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div class="show-page">{$data['show']}</div>
+  </div>
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+</html>

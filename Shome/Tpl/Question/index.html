@@ -1,0 +1,165 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/base.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/css/question.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin=0 topmargin=0 ondragstart='return false' onselectstart ='return false'>
+<include file="./Public/Home/nav.html" />
+<!-- content -->
+<div id="content" class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<ol class="breadcrumb">
+				<li><a href="{:U('Index/index')}">首页</a></li>
+				<li><a href="{:U('Question/index')}">问答社区</a></li>
+				<li class="active">{$tData['nowType']['name']}</li>
+			</ol>
+		</div>
+		<div class="col-sm-12">	
+			<div class="content-left col-sm-8">
+				<div class="col-sm-12 check">
+					<ul>
+						<li><a href="{:U('Question/index')}">全部</a></li>
+						<volist name="tData.list" id="v">
+							<li><a href="__URL__/index.php/Question/index?tId={$v.id}">{$v.name}</a></li>
+						</volist>
+					</ul>
+				</div>
+				<div class="col-sm-12 lists">
+					<volist name="data.list" id="v" empty="暂时没有数据">
+						<div class="col-sm-12 list">
+							<div class="col-sm-1 hidden-xs">
+								<img class="userPic img-rounded" src="__ROOT__{$v.iconPath}{$v.iconName}" width="50px">
+							</div>
+							<div class="col-sm-11">
+								<p class="list-title">
+									<a href="__URL__/index.php/Answer/index?id={$v.id}&tId={$tData['nowType']['id']}">{$v.title}</a><br>
+								</p>
+								<span class="list-pro">{$v.tm}&nbsp;&nbsp;类别: {$v.typeName}&nbsp;&nbsp;阅读量: {$v.clickCnt}&nbsp;&nbsp;回答量: {$v.anCnt}&nbsp;&nbsp;</span>
+							</div>
+						</div>
+					</volist>
+				</div>
+				<div class="fenye text-center col-sm-12">{$data['show']}</div>
+			</div>
+			<div class="content-right col-sm-4 hidden-sm">
+				<div class="col-sm-12 column column1">
+					<h4>问答统计</h4>
+					<h4><small>在此特别感谢所有用户的贡献</small></h4>
+					<p>我们有多少问题<span class="cnt">{$pkData['tt']['q']}</span></p>
+					<p>我们有多少回答<span class="cnt">{$pkData['tt']['a']}</span></p>
+					<p>我们已解决了多少问题<span class="cnt">{$pkData['tt']['ac']}</span></p>
+				</div>
+				<div class="col-sm-12 column column3">
+					<h4>问题PK榜</h4>
+					<h4><small>若有疑问请联系我们的客服人员</small></h4>
+					<ul>
+						<li>
+							<span>回答数PK</span>
+							<ul>
+								<volist name="pkData.q.a" id="v">
+									<li><a href="__URL__/index.php/Answer/index?id={$v.id}&tId={$tData['nowType']['id']}">{$v.title}</a><span class="cnt">{$v.cnt}</span></li>
+								</volist>
+							</ul>
+						</li>
+						<li>
+							<span>阅读数PK</span>
+							<ul>
+								<volist name="pkData.q.c" id="v">
+									<li><a href="__URL__/index.php/Answer/index?id={$v.id}&tId={$tData['nowType']['id']}">{$v.title}</a><span class="cnt">{$v.clickCnt}</span></li>
+								</volist>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-12 column column2">
+					<h4>用户PK榜</h4>
+					<h4><small>若有疑问请联系我们的客服人员</small></h4>
+					<ul>
+						<li>
+							<span>回答数PK</span>
+							<ul>
+								<volist name="pkData.u.a" id="v">
+									<li>
+										<img class="userPic" src="__ROOT__{$v.iconPath}{$v.iconName}" class="img-rounded"  width="30px">
+										{$v.nickName}
+										<span class="cnt">{$v.cnt}</span>
+									</li>
+								</volist>
+							</ul>
+						</li>
+						<li>
+							<span>问题数PK</span>
+							<ul>
+								<volist name="pkData.u.q" id="v">
+									<li>
+										<img class="userPic" src="__ROOT__{$v.iconPath}{$v.iconName}" class="img-rounded"  width="30px">
+										{$v.nickName}
+										<span class="cnt">{$v.cnt}</span>
+									</li>
+								</volist>
+							</ul>
+						</li>
+						<li>
+							<span>采用数PK</span>
+							<ul>
+								<volist name="pkData.u.ac" id="v">
+									<li>
+										<img class="userPic" src="__ROOT__{$v.iconPath}{$v.iconName}" class="img-rounded"  width="30px">
+										{$v.nickName}
+										<span class="cnt">{$v.cnt}</span>
+									</li>
+								</volist>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /content -->
+<!-- foot -->
+<div id="foot">
+	<p class="text-center">Copyright @ 2016 捷搜索 皖ICP备16017589号-1</p>
+</div>
+<!-- /foot -->
+<!-- userInfo -->
+<div id="userInfo">
+	<div class="top">
+		<img src="__ROOT__/Resources/images/userPic1.jpg" width="50px" class="img-circle img-rounded">&nbsp;
+		<span class="userName">jsosuo</span>
+	</div>
+	<div class="content userSign">
+		我可以不聪明，但是我一定要努力，努力可以解决难题
+	</div>
+	<div class="foot userCnt">
+		问题数 <span class="wenCnt">12</span>&nbsp;&nbsp;
+		回答数 <span class="daCnt">12</span>&nbsp;&nbsp;
+		收到打赏 <span class="shangCnt">12.00</span>
+	</div>
+	<i class="bottom"></i>
+</div>	
+<!-- /userInfo -->
+<!-- backTop -->
+<div id="backTop">
+	<span class="glyphicon glyphicon-arrow-up"></span>
+</div>
+<!-- /backTop -->
+<!-- ask question -->
+<div class="visible-xs-block" id="ask-question">
+	<span class="glyphicon glyphicon-pencil"></span>
+</div>
+<!-- /ask question -->
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/reset.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/visitInfo.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/base.js"></script>
+</html>

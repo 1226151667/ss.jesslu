@@ -1,0 +1,39 @@
+@media (min-width: 768px){
+	.navbar{border-radius:0px;}
+	.navbar-nav>li>a{padding-top:25px;padding-bottom:25px;}
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{margin-right:15px;}
+}
+@media (max-width: 767px){
+	.col-sm-2,.col-sm-5{padding:0px;}
+	.navbar-brand img{height:50px;}
+}
+body{font-family:"微软雅黑","黑体","宋体";font-size:14px;color:#5b5b5b;}
+.navbar{min-height:70px;}
+.nav>li>a{padding-left:30px;padding-right:30px;}
+.navbar-default{background-color:rgba(0,0,0,0.80);border:none;color:white;}
+.navbar-default .navbar-nav>li>a{color:#adadad;}
+.navbar-default .navbar-nav>li>a:hover{color:white;background-color:#2ad;}
+.navbar-default .navbar-nav>li>a:focus{color:white;background-color:#558da2}
+.navbar-brand{padding:0px;}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{color:white;background-color:#558da2;}
+.dropdown-menu{background-color:#558da2;}
+.dropdown-menu>li>a{color:#e0e0e0;}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{background-color:white;color:#558da2;}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{color:#558da2;background-color:white}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus{color:white;background-color:#558da2}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{color:white;background-color:#558da2;}
+
+.tab-pane{padding:10px;}
+.tab-pane .oper{height:auto;background-color:#eee;line-height:50px;}
+.tab-pane .oper input,.tab-pane .oper select{margin-top:8px;}
+.tab-pane table .table-special{font-size:15px;color:#2ad;}
+.tab-pane table .glyphicon{font-size:15px;padding-right:5px;cursor:pointer;}
+.tab-pane table .glyphicon:hover{color:#2ad;}
+.tab-pane table a{cursor:pointer;}
+.tbJquery{width:98%;height:800px;}
+
+#halfMouth .tbJquery{border-bottom:1px solid #adadad;margin-bottom:200px;}
+.show-page{background:#eee;height:30px;line-height:30px;text-align:center;font-size:15px;}
+
+.admin-upload{position:relative;display:inline-block;background:none;border: 1px solid #6dcafb;  border-radius: 4px;padding: 4px 12px;overflow: hidden;color: #6dcafb;text-decoration: none;text-indent: 0;line-height: 20px;}
+a input{opacity: 0;position:absolute;}

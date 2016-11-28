@@ -1,0 +1,149 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__ROOT__/Resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/Resources/images/logo.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="__ROOT__/Resources/css/base.css" rel="stylesheet" type="text/css">
+<!-- <link rel="stylesheet" type="text/css" href="__ROOT__/Resources/edit/third-party/SyntaxHighlighter/shCoreDefault.css"> -->
+<link href="__ROOT__/Resources/css/article.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin=0 topmargin=0 ondragstart='return false' onselectstart ='return false'>
+<include file="./Public/Home/nav.html" />
+<!-- content -->
+<div class="container" id="content">
+	<div class="col-sm-12">
+		<ol class="breadcrumb">
+			<li><a href="{:U('Index/index')}">首页</a></li>
+			<li><a href="{:U('Blog/index')}">技术博客</a></li>
+			<neq name="data.nowType.id" value="0"><li><a href="__URL__/index.php/Blog/index?tId={$data.nowType.id}">{$data.nowType.name}</a></li></neq>
+			<li class="active">{$data.ar.title}</li>
+		</ol>
+	</div>
+	<div class="col-sm-12 content">
+		<div class="col-sm-4 content-left">
+			<div class="userInfo">
+				<img src="__ROOT__/{$data.ar.iconPath}{$data.ar.iconName}" class="img-thumbnail" width="120px">
+				<ul class="pro">
+					<li>博主：{$data.ar.nickName}</li>
+					<li>博文：{$data.ar.arCnt}&nbsp;&nbsp;问题：{$data.ar.qCnt}&nbsp;&nbsp;回答：{$data.ar.anCnt}</li>
+				</ul>
+			</div>
+			<div class="list">
+				<h3>TA的博文</h3>
+				<ul>
+					<volist name="data.arL" id="v">
+						<li><a href="__URL__/index.php/Article/index?id={$v.id}">{$v.title}</a></li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-8 content-right">
+			<div class="col-sm-12">
+				<div class="text-center">
+					<h4>{$data.ar.title}</h4>
+					<h4>
+						<small>
+							日期：<span>{$data.ar.tm}</span>&nbsp;&nbsp;
+							博主：<span>{$data.ar.nickName}</span>&nbsp;&nbsp;
+							分类：<span>{$data.ar.typeName}</span>&nbsp;&nbsp;
+							阅读：<span>{$data.ar.clickCnt}</span>&nbsp;&nbsp;
+						</small>
+					</h4>
+				</div>
+				<div class="blog-content">
+					<?php echo htmlspecialchars_decode($data['ar']['content']);?>
+				</div>
+				<div title="{$data.ar.id}" class="text-center blog-oper">
+					<a type="2" name="up" title="赞同" class="btn-glyphicon btn btn-primary btn-lg glyphicon glyphicon-thumbs-up vote">&nbsp;{$data.ar.upCnt}</a>&nbsp;&nbsp;
+					<a type="2" name="down" title="反对" class="btn-glyphicon btn btn-primary btn-lg glyphicon glyphicon-thumbs-down vote">&nbsp;{$data.ar.downCnt}</a>&nbsp;&nbsp;
+					<a title="打赏" class="btn-glyphicon btn btn-primary btn-lg glyphicon glyphicon-heart">&nbsp;{$data.ar.rCnt}</a>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="comment">
+					<h4>评论 ({$data.ar.cCnt})</h4>
+					<div class="col-sm-12">
+						<volist name="data.cL" id="v1">
+							<div class="comment-list">
+								<p>
+									<img class="userPic img-circle" src="__ROOT__{$v1.iconPath}{$v1.iconName}" width="50px">
+									&nbsp;<span>{$v1.nickName}</span>
+								</p>
+								<p class="comment-content">{$v1.content}</p>
+								<p class="text-right">
+									<a title="回复" class="btn-glyphicon btn btn-primary glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;{$v1.tm}
+								</p>
+								<volist name="data.rpL" id="v2">
+									<eq name="v2.cId" value="$v1.id">
+										<div>
+											<p>
+												<img src="__ROOT__{$v2.iconPath}{$v2.iconName}" class="img-circle userPic" width="50px">
+												<span>{$v2.nickName}</span>
+												&nbsp;<span class="huifu">回复</span>&nbsp;
+												<img src="__ROOT__{$v2.toIconPath}{$v2.toIconName}" class="img-circle userPic" width="50px">
+												<span>{$v2.toNickName}</span>
+											</p>
+											<p class="comment-content">
+											{$v2.content}
+											</p>
+											<p class="text-right list-pro">
+												<a title="回复" class="btn-glyphicon btn btn-primary glyphicon glyphicon-comment reply"></a>&nbsp;&nbsp;
+												<span class="tm">{$v2.tm}</span>
+											</p>
+										</div>
+									</eq>
+								</volist>
+							</div>
+						</volist>
+					</div>
+					<div class="col-sm-12 edit-iframe">
+						<iframe id="minEdit" name="minEdit" frameborder="0" height="100%" width="100%" src="__ROOT__/Public/minEdit/index.html"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /content -->
+<!-- foot -->
+<div id="foot">
+	<p class="text-center">Copyright @ 2016 捷搜索 皖ICP备16017589号-1</p>
+</div>
+<!-- /foot -->
+<!-- userInfo -->
+<div id="userInfo">
+	<div class="top">
+		<img src="__ROOT__/Resources/images/userPic1.jpg" width="50px" class="img-circle img-rounded">&nbsp;
+		<span class="userName">jsosuo</span>
+	</div>
+	<div class="content userSign">
+		我可以不聪明，但是我一定要努力，努力可以解决难题
+	</div>
+	<div class="foot userCnt">
+		发表文章 <span class="wenCnt">12</span>&nbsp;&nbsp;
+	</div>
+	<i class="bottom"></i>
+</div>	
+<!-- /userInfo -->
+<!-- backTop -->
+<div id="backTop">
+	<span class="glyphicon glyphicon-arrow-up"></span>
+</div>
+<!-- /backTop -->
+<!-- ask question -->
+<div class="visible-xs-block" id="ask-question">
+	<span class="glyphicon glyphicon-pencil"></span>
+</div>
+<!-- /ask question -->
+</body>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/reset.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/visitInfo.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/base.js"></script>
+<script type="text/javascript" src="__ROOT__/Resources/js/operate.js"></script>
+<!-- <script type="text/javascript" src="__ROOT__/Resources/edit/third-party/SyntaxHighlighter/shCore.js"></script> 
+<script>SyntaxHighlighter.all();</script>-->
+</html>

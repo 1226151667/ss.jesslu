@@ -1,0 +1,24 @@
+*{margin:0px;padding:0px;}
+a{text-decoration:none;}
+@font-face { 
+  font-family: 'liaocao'; 
+  src: url('./fonts/liaocao.ttf');
+   font-weight: normal;
+  font-style: normal; 
+} 
+#edit{width:100%;margin:0 auto;height:auto;}
+#edit-main{height:216px;width:99%;font-size:13px;font-family:"微软雅黑";color:rgba(135,135,135,0.89);}
+#edit-bottom{height:30px;width:98%;border:1px solid #6dcafb;margin-top:3px;border-radius:5px;}
+#edit-bottom .edit-auto{font-family:"liaocao";font-size:20px;float:left;line-height:30px;color: #2ad;}
+#edit-bottom .edit-sub{float:right;}
+#edit-bottom .edit-sub button{cursor:pointer;height:30px;width:80px;background:#2ad;border:none;color:white;font-size:20px;font-family:"liaocao";}
+#edit-main .edit-select{height:35px;width:99%;border:1px solid #6dcafb;border-radius:5px;}
+#edit-main .edit-select .str-length{color:#6dcafb;float:right;height:35px;line-height:35px;padding-right:10px;font-family:"liaocao";font-size:20px;}
+#edit-main .edit-select .edit-notice{font-size:20px;height:10px;line-height:10px;margin-left:30%;padding:15px 50px;border-radius:7px;z-index:2;position:absolute;display:none;margin-top:50px;}
+#edit-main .edit-edit{height:178px;width:99%;border:1px solid #6dcafb;border-top:none;}
+#edit-main .edit-edit .edit-text{background:none;overflow-y:auto;resize:none;width:98%;height:168px;padding:10px 0 0 2%;border:none;font-family:"微软雅黑";font-size:14px;color:#eee;}
+#edit-main .edit-select .face-icon{display: block;float: left;margin-top: -1px;margin-left: 10px;font-family:"微软雅黑";font-size: 25px;color: rgb(103, 183, 225);cursor: pointer;}
+#edit-select-content .face-icon-list{background:#eee;height:192px;overflow-y:auto;width:360px;border-radius:5px;border:1px solid #6dcafb;z-index:99;position:absolute;margin-left:38px;margin-top:18px;padding:10px;display:none;}
+#edit-select-content .face-icon-list table{width:100%;}
+#edit-select-content .face-icon-list table tr td{border:1px solid #e0e0e0;height:30px;width:30px;text-align:center;}
+#edit-select-content .face-icon-list table img{margin-top:4px;cursor:pointer;}

@@ -1,0 +1,7 @@
+.content-left,.content-right{padding:0px;}
+.content-left .jiazai{background:#adadad;border:2px solid #eee;border-radius:5px;height:40px;line-height:40px;color:white;}
+.content-left .list{border-top:1px solid #8cc8e7;height:auto;padding:20px 5px;border-radius:3px;}
+.content-left .list .list-title{font-size:16px;}
+.content-right .column{border-top:1px solid #f0f0f0;padding:10px;}
+.content-right .column2 ul li,.content-right .column3 ul li{margin-top:10px;}
+.content-right .column .cnt{display:block;float:right;height:20;width:auto;background:#3c3c3c;border-radius:5px;color:white;line-height:20px;padding:0px 5px;}
